@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/* Archivos donde Tailwind busca clases */
+@source "../../**/*.php";
+@source "../../assets/js/**/*.js";
+
+/* TOKENS DE DISEÑO */
+@theme {
+  --color-bg:     #F6F4F0;
+  --color-ink:    #141311;
+  --color-accent: #C05F3C;
+
+  /* TIPOGRAFÍA
+   * font-sans (por defecto): Plus Jakarta Sans → títulos 800/700, textos 400 (500 en pequeño o sobre fondo oscuro)
+   * font-mono: Geist Mono → detalles técnicos: stack, fechas, etiquetas, HABLAMOS
+   */
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+
+  --tracking-titulo: -0.02em;   /* títulos grandes en negrita → tracking-titulo */
+  --leading-texto:   1.65;      /* párrafos y textos largos   → leading-texto */
+
+  /* Logo grande de la Home → clase text-logo
+   * Llena el hueco que dejan libre HABLAMOS y el burger según el número de letras del título.
+   * --logo-ancho-letra: ancho medio de una letra de la fuente del logo en mayúsculas (en em). Máximo: 16rem
+   */
+  --text-logo: min(16rem, calc((min(100vw, 80rem) - var(--logo-hueco)) / (var(--logo-letras) * var(--logo-ancho-letra))));
+
+  /* Botón HABLAMOS →→ → clase animate-marquee */
+  --animate-marquee: marquee 4s linear infinite;
+  @keyframes marquee {
+    to { transform: translateX(-50%); }
+  }
+}
+
+/* EXCEPCIONES
+ * Solo lo que no se pueda resolver con clases de Tailwind
+ */
+
+/* Datos para --text-logo
+ * --logo-letras: número de letras del título del sitio (functions.php lo sobrescribe)
+ * --logo-hueco:  espacio que no puede ocupar el logo (márgenes laterales + botones + separación)
+ */
+:root {
+  --logo-letras: 8;
+  --logo-ancho-letra: 0.72;   /* Plus Jakarta Sans ExtraBold en mayúsculas */
+  --logo-hueco:  7rem;   /* móvil: márgenes 2rem + burger 2rem + separación 1.5rem + margen de seguridad */
+}
+@media (min-width: 48rem) {
+  :root { --logo-hueco: 20rem; }   /* md+: márgenes 4rem + HABLAMOS 10rem + burger + separaciones */
+}
+
+/* Header fixed debajo de la barra de administración de WordPress (solo con sesión iniciada)
+ * ≤600px la barra de WordPress es absolute y se va con el scroll: ahí el header se queda arriba (top: 0)
+ */
+@media (min-width: 601px) {
+  .admin-bar .site-header { top: 46px; }
+}
+@media (min-width: 783px) {
+  .admin-bar .site-header { top: 32px; }
+}
+
+/* OLA DE COLOR · cada letra (span con --i = su posición) pasa de su color → accent → su color, 50 ms después de la anterior
+ * Al cargar: además aparece desde el 15 % de opacidad. Se genera con baerchen_ola() (functions.php).
+ */
+.ola-activa > span {
+  animation: ola 0.45s ease-in-out both;
+  animation-delay: calc(var(--i) * 50ms + 300ms);
+}
+@keyframes ola {
+  0%   { opacity: 0.15; }
+  50%  { opacity: 1; color: var(--color-accent); }
+  100% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ola-activa > span { animation: none; }
+}
+
+/* CRECER DESDE LA DERECHA (Sobre mí en la Home) · solo md+ y sin "reducir movimiento"
+ * header.js mide la foto y pone --c-t/--c-r/--c-b/--c-l (distancias de la foto a los bordes del panel).
+ * Sin esas variables (JS sin cargar) el clip-path no es válido y el panel se ve entero.
+ */
+@media (min-width: 48rem) and (prefers-reduced-motion: no-preference) {
+  [data-crecer] [data-crecer-panel] {
+    clip-path: inset(var(--c-t) var(--c-r) var(--c-b) var(--c-l) round 2rem);
+    transition: clip-path 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  [data-crecer][data-abierto] [data-crecer-panel] {
+    clip-path: inset(0 0 0 0 round 0);
+  }
+}
+
+/* Desplazamiento suave hasta las anclas (#trabajos), salvo con "reducir movimiento" */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Menú principal · los enlaces entran escalonados desde la derecha al abrir
+ * Los <li> los genera wp_nav_menu(), por eso van aquí y no como clases
+ */
+#menu-principal li {
+  opacity: 0;
+  translate: 1.5rem 0;
+  transition: opacity 0.4s ease-out, translate 0.4s ease-out;
+}
+#menu-principal[data-open] li { opacity: 1; translate: 0 0; }
+#menu-principal[data-open] li:nth-child(1) { transition-delay: 0.10s; }
+#menu-principal[data-open] li:nth-child(2) { transition-delay: 0.16s; }
+#menu-principal[data-open] li:nth-child(3) { transition-delay: 0.22s; }
+#menu-principal[data-open] li:nth-child(4) { transition-delay: 0.28s; }
+#menu-principal[data-open] li:nth-child(5) { transition-delay: 0.34s; }
+#menu-principal[data-open] li:nth-child(6) { transition-delay: 0.40s; }
+
+@media (prefers-reduced-motion: reduce) {
+  #menu-principal li { translate: none; transition: none; }
+}

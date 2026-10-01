@@ -1,0 +1,5 @@
+node_modules/
+.DS_Store
+
+# Documento interno del proyecto (datos de hosting, notas): solo en local, no se publica
+CLAUDE.md
