@@ -17,8 +17,7 @@ function baerchen_setup() {
 add_action( 'after_setup_theme', 'baerchen_setup' );
 
 /* TAMAÑOS DE IMAGEN
- * A medida del diseño y al doble para pantallas Retina. WordPress añade srcset solo.
- * Solo se generan para imágenes subidas después; para las anteriores, Regenerate Thumbnails.
+
  */
 function baerchen_tamanos_imagen() {
   add_image_size( 'baerchen-retrato', 976, 1448, true );   // foto del hero · 2:3 (Figma 488 × 724)
@@ -28,46 +27,10 @@ function baerchen_tamanos_imagen() {
 }
 add_action( 'after_setup_theme', 'baerchen_tamanos_imagen' );
 
-/* ACF · CAMPOS DE LA HOME
- * Definidos en código para que los nombres coincidan siempre con sections/home-hero.php.
- * Aparecen al editar la página de inicio (Páginas → Inicio).
+/* ACF · CAMPOS
+ * Los grupos de campos están en acf-json/ (ACF los carga solo). Se editan desde ACF → Grupos de campos;
+ * al guardar, ACF reescribe el .json correspondiente.
  */
-function baerchen_campos_home() {
-  if ( ! function_exists( 'acf_add_local_field_group' ) ) return;
-
-  acf_add_local_field_group( array(
-    'key'      => 'group_baerchen_home_hero',
-    'title'    => 'Home · Hero',
-    'location' => array( array( array( 'param' => 'page_type', 'operator' => '==', 'value' => 'front_page' ) ) ),
-    'position' => 'acf_after_title',
-    'fields'   => array(
-      array( 'key' => 'field_hero_etiqueta', 'name' => 'hero_etiqueta', 'label' => 'Etiqueta',  'type' => 'text',     'placeholder' => '/ Diseño UX & desarrollo web' ),
-      array( 'key' => 'field_hero_titular',  'name' => 'hero_titular',  'label' => 'Titular',   'type' => 'text',     'placeholder' => 'Construyo webs que duran', 'instructions' => 'Corto: es el título principal (h1) de la Home.' ),
-      array( 'key' => 'field_hero_parrafo',  'name' => 'hero_parrafo',  'label' => 'Párrafo',   'type' => 'textarea', 'rows' => 3, 'new_lines' => '' ),
-      array( 'key' => 'field_hero_foto',     'name' => 'hero_foto',     'label' => 'Foto',      'type' => 'image',    'return_format' => 'id', 'preview_size' => 'medium', 'instructions' => 'Vertical (2:3). Se recorta sola.' ),
-      array( 'key' => 'field_hero_cta',      'name' => 'hero_cta',      'label' => 'Texto del enlace a Trabajos', 'type' => 'text', 'placeholder' => 'Ver trabajos' ),
-    ),
-  ) );
-
-  // Sección Sobre mí (sections/home-sobre-mi.php)
-  acf_add_local_field_group( array(
-    'key'        => 'group_baerchen_home_sobremi',
-    'title'      => 'Home · Sobre mí',
-    'location'   => array( array( array( 'param' => 'page_type', 'operator' => '==', 'value' => 'front_page' ) ) ),
-    'position'   => 'normal',
-    'menu_order' => 1,
-    'fields'     => array(
-      array( 'key' => 'field_sobremi_etiqueta', 'name' => 'sobremi_etiqueta', 'label' => 'Etiqueta', 'type' => 'text', 'placeholder' => '/ Sobre mí' ),
-      array( 'key' => 'field_sobremi_titular',  'name' => 'sobremi_titular',  'label' => 'Titular',  'type' => 'text', 'placeholder' => 'Doy vida a productos digitales' ),
-      array( 'key' => 'field_sobremi_parrafo',  'name' => 'sobremi_parrafo',  'label' => 'Párrafo',  'type' => 'textarea', 'rows' => 3, 'new_lines' => '' ),
-      array( 'key' => 'field_sobremi_stack',    'name' => 'sobremi_stack',    'label' => 'Stack',    'type' => 'textarea', 'rows' => 3, 'new_lines' => '',
-             'instructions' => 'Una línea por grupo: NOMBRE | valores. Ej.: DISEÑO | Figma · UX/UI · Prototipado' ),
-      array( 'key' => 'field_sobremi_foto',     'name' => 'sobremi_foto',     'label' => 'Foto',     'type' => 'image', 'return_format' => 'id', 'preview_size' => 'medium',
-             'instructions' => 'Vertical (3:4, ideal 976 × 1308). Sin esquinas redondeadas: las pone la web.' ),
-    ),
-  ) );
-}
-add_action( 'acf/init', 'baerchen_campos_home' );
 
 /* LIMPIAR HEAD */
 function baerchen_limpiar_cabecera() {

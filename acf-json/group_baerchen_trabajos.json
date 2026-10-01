@@ -1,0 +1,34 @@
+{
+    "key": "group_baerchen_trabajos",
+    "title": "Trabajos · Cabecera",
+    "fields": [
+        {
+            "key": "field_trabajos_titular",
+            "label": "Titular",
+            "name": "trabajos_titular",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "Creando proyectos"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "13"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1790856340
+}

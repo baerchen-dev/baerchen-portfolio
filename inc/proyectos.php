@@ -1,7 +1,7 @@
 <?php
 /**
  * PROYECTOS
- * Tipo de contenido "Proyecto", sus etiquetas y sus campos ACF.
+ * Tipo de contenido "Proyecto" y sus etiquetas (los campos ACF están en acf-json/).
  * Se carga desde functions.php.
  *
  * URLs: la página Trabajos sigue en /trabajos/ (page-trabajos.php)
@@ -43,37 +43,4 @@ function baerchen_registrar_proyectos() {
 }
 add_action( 'init', 'baerchen_registrar_proyectos' );
 
-/* ACF · CAMPOS */
-function baerchen_campos_proyectos() {
-  if ( ! function_exists( 'acf_add_local_field_group' ) ) return;
-
-  // Datos de cada proyecto
-  acf_add_local_field_group( array(
-    'key'      => 'group_baerchen_proyecto',
-    'title'    => 'Proyecto · Datos',
-    'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'proyecto' ) ) ),
-    'position' => 'acf_after_title',
-    'fields'   => array(
-      array( 'key' => 'field_proyecto_frase',  'name' => 'proyecto_frase',  'label' => 'Frase',  'type' => 'text', 'maxlength' => 60, 'instructions' => 'Corta (3–6 palabras). Sale en gris junto al nombre en la tarjeta.' ),
-      array( 'key' => 'field_proyecto_url',    'name' => 'proyecto_url',    'label' => 'URL de la web', 'type' => 'url' ),
-      array( 'key' => 'field_proyecto_estado', 'name' => 'proyecto_estado', 'label' => 'Estado', 'type' => 'select', 'choices' => array( 'terminado' => 'Terminado', 'desarrollo' => 'En desarrollo' ), 'default_value' => 'terminado', 'instructions' => '"En desarrollo" añade la etiqueta EN DESARROLLO a la tarjeta.' ),
-      array( 'key' => 'field_proyecto_anio',   'name' => 'proyecto_anio',   'label' => 'Año', 'type' => 'number' ),
-      array( 'key' => 'field_proyecto_rol',    'name' => 'proyecto_rol',    'label' => 'Rol', 'type' => 'text', 'placeholder' => 'Diseño UX/UI y desarrollo' ),
-    ),
-  ) );
-
-  // Título de la página Trabajos
-  $trabajos = get_page_by_path( 'trabajos' );
-  if ( $trabajos ) {
-    acf_add_local_field_group( array(
-      'key'      => 'group_baerchen_trabajos',
-      'title'    => 'Trabajos · Cabecera',
-      'location' => array( array( array( 'param' => 'page', 'operator' => '==', 'value' => (string) $trabajos->ID ) ) ),
-      'position' => 'acf_after_title',
-      'fields'   => array(
-        array( 'key' => 'field_trabajos_titular', 'name' => 'trabajos_titular', 'label' => 'Titular', 'type' => 'text', 'placeholder' => 'Creando proyectos' ),
-      ),
-    ) );
-  }
-}
-add_action( 'acf/init', 'baerchen_campos_proyectos' );
+/* ACF · CAMPOS: "Proyecto · Datos" y "Trabajos · Cabecera" están en acf-json/ */

@@ -1,0 +1,73 @@
+{
+    "key": "group_baerchen_proyecto",
+    "title": "Proyecto · Datos",
+    "fields": [
+        {
+            "key": "field_proyecto_frase",
+            "label": "Frase",
+            "name": "proyecto_frase",
+            "type": "text",
+            "instructions": "Corta (3–6 palabras). Sale en gris junto al nombre en la tarjeta.",
+            "required": 0,
+            "maxlength": 60
+        },
+        {
+            "key": "field_proyecto_url",
+            "label": "URL de la web",
+            "name": "proyecto_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_proyecto_estado",
+            "label": "Estado",
+            "name": "proyecto_estado",
+            "type": "select",
+            "instructions": "\"En desarrollo\" añade la etiqueta EN DESARROLLO a la tarjeta.",
+            "required": 0,
+            "choices": {
+                "terminado": "Terminado",
+                "desarrollo": "En desarrollo"
+            },
+            "default_value": "terminado",
+            "return_format": "value"
+        },
+        {
+            "key": "field_proyecto_anio",
+            "label": "Año",
+            "name": "proyecto_anio",
+            "type": "number",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_proyecto_rol",
+            "label": "Rol",
+            "name": "proyecto_rol",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "Diseño UX/UI y desarrollo"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "proyecto"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1790856340
+}

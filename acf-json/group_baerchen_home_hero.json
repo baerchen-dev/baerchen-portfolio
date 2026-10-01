@@ -1,0 +1,73 @@
+{
+    "key": "group_baerchen_home_hero",
+    "title": "Home · Hero",
+    "fields": [
+        {
+            "key": "field_hero_etiqueta",
+            "label": "Etiqueta",
+            "name": "hero_etiqueta",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "/ Diseño UX & desarrollo web"
+        },
+        {
+            "key": "field_hero_titular",
+            "label": "Titular",
+            "name": "hero_titular",
+            "type": "text",
+            "instructions": "Corto: es el título principal (h1) de la Home.",
+            "required": 0,
+            "placeholder": "Construyo webs que duran"
+        },
+        {
+            "key": "field_hero_parrafo",
+            "label": "Párrafo",
+            "name": "hero_parrafo",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_hero_foto",
+            "label": "Foto",
+            "name": "hero_foto",
+            "type": "image",
+            "instructions": "Vertical (2:3). Se recorta sola.",
+            "required": 0,
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_hero_cta",
+            "label": "Texto del enlace a Trabajos",
+            "name": "hero_cta",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "Ver trabajos"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1790856340
+}

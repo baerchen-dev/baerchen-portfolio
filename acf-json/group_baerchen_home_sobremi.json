@@ -1,0 +1,74 @@
+{
+    "key": "group_baerchen_home_sobremi",
+    "title": "Home · Sobre mí",
+    "fields": [
+        {
+            "key": "field_sobremi_etiqueta",
+            "label": "Etiqueta",
+            "name": "sobremi_etiqueta",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "/ Sobre mí"
+        },
+        {
+            "key": "field_sobremi_titular",
+            "label": "Titular",
+            "name": "sobremi_titular",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "Doy vida a productos digitales"
+        },
+        {
+            "key": "field_sobremi_parrafo",
+            "label": "Párrafo",
+            "name": "sobremi_parrafo",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_sobremi_stack",
+            "label": "Stack",
+            "name": "sobremi_stack",
+            "type": "textarea",
+            "instructions": "Una línea por grupo: NOMBRE | valores. Ej.: DISEÑO | Figma · UX/UI · Prototipado",
+            "required": 0,
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_sobremi_foto",
+            "label": "Foto",
+            "name": "sobremi_foto",
+            "type": "image",
+            "instructions": "Vertical (3:4, ideal 976 × 1308). Sin esquinas redondeadas: las pone la web.",
+            "required": 0,
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1790856340
+}
