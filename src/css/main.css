@@ -3,6 +3,7 @@
 /* Archivos donde Tailwind busca clases */
 @source "../../**/*.php";
 @source "../../assets/js/**/*.js";
+@source "../../inc/**/*.html";   /* código del formulario de Contact Form 7 (se pega en el plugin) */
 
 /* TOKENS DE DISEÑO */
 @theme {
@@ -28,6 +29,7 @@
 
   /* Botón HABLAMOS →→ → clase animate-marquee */
   --animate-marquee: marquee 4s linear infinite;
+  --animate-cinta:   marquee 50s linear infinite;   /* cinta de Contacto: misma animación, mucho más lenta */
   @keyframes marquee {
     to { transform: translateX(-50%); }
   }
@@ -114,3 +116,33 @@
 @media (prefers-reduced-motion: reduce) {
   #menu-principal li { translate: none; transition: none; }
 }
+
+/* CONTACT FORM 7 · página Contacto
+ * CF7 solo admite clases simples en sus campos ([-0-9a-zA-Z_]), sin ":" ni "/", así que los campos llevan
+ * class:campo y aquí se les aplican utilidades de Tailwind. Los envoltorios del formulario usan clases normales
+ * (inc/formulario-contacto.html).
+ */
+.formulario-contacto .campo {
+  @apply block w-full rounded-none border-0 border-b-2 border-ink/20 bg-transparent py-2 text-base font-medium text-ink outline-none transition-colors duration-300 placeholder:text-ink/40 focus:border-ink;
+}
+.formulario-contacto select.campo { @apply cursor-pointer appearance-none pr-8; }
+.formulario-contacto select.campo:has(option:checked[value=""]) { @apply text-ink/40; }
+.formulario-contacto textarea.campo { @apply min-h-30 resize-y; }
+
+/* Casilla de privacidad */
+.formulario-contacto .wpcf7-list-item { margin: 0; }
+.formulario-contacto .wpcf7-list-item label { @apply flex cursor-pointer items-start gap-3; }
+.formulario-contacto input[type="checkbox"] { @apply mt-0.5 size-5 shrink-0 cursor-pointer accent-ink; }
+
+/* Errores: línea en accent (3,9:1, cumple para bordes) y mensaje en ink (accent no llega a 4,5:1 en texto pequeño) */
+.formulario-contacto .campo.wpcf7-not-valid { @apply border-accent; }
+.formulario-contacto .wpcf7-not-valid-tip { @apply mt-2 flex items-center gap-2 text-sm font-medium text-ink before:size-2 before:shrink-0 before:rounded-full before:bg-accent before:content-['']; }
+
+/* Mensaje general (aparece debajo del formulario al enviar) */
+.formulario-contacto .wpcf7 form .wpcf7-response-output { @apply m-0 mt-8 rounded-xl border-0 border-l-4 border-accent bg-white/50 px-5 py-4 text-base font-medium text-ink; }
+.formulario-contacto .wpcf7 form.sent .wpcf7-response-output { @apply border-ink bg-ink text-bg; }
+
+/* Mientras se envía */
+.formulario-contacto .wpcf7 form.submitting button[type="submit"] { @apply pointer-events-none opacity-60; }
+.formulario-contacto .wpcf7-spinner { display: none; }
+

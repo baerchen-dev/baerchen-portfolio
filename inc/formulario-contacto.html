@@ -1,0 +1,24 @@
+<div class="grid grid-cols-1 gap-y-9 sm:grid-cols-2 sm:gap-x-8">
+
+  <label class="flex flex-col gap-3 text-base font-medium">Nombre
+    [text* nombre autocomplete:name class:campo placeholder "Nombre de contacto"]</label>
+
+  <label class="flex flex-col gap-3 text-base font-medium">Email
+    [email* email autocomplete:email class:campo placeholder "Correo electrónico"]</label>
+
+  <label class="flex flex-col gap-3 text-base font-medium">Nombre de la empresa (opcional)
+    [text empresa autocomplete:organization class:campo placeholder "Nombre de la empresa"]</label>
+
+  <label class="flex flex-col gap-3 text-base font-medium">¿Qué necesitas?
+    <span class="relative block">[select* necesidad class:campo first_as_label "Elige una opción" "Diseño UX/UI" "Desarrollo WordPress" "Mejora de webs" "Otro"]<svg class="pointer-events-none absolute right-0 top-3 size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></label>
+
+  <label class="flex flex-col gap-3 text-base font-medium sm:col-span-2">Cuéntame tu proyecto
+    [textarea* mensaje x4 class:campo placeholder "Cuéntame qué tienes en mente, en qué punto está y para cuándo lo necesitas."]</label>
+
+  <div class="sm:col-span-2 text-base font-medium">[acceptance privacidad] He leído y acepto la <a href="/politica-de-privacidad/" class="underline underline-offset-4 hover:opacity-60">política de privacidad</a>. [/acceptance]</div>
+
+  <div class="sm:col-span-2">
+    <button type="submit" class="inline-flex h-12 items-center gap-3 rounded-xl bg-ink px-5 font-mono font-medium text-lg uppercase text-bg cursor-pointer hover:bg-accent transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Enviar <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+
+</div>

@@ -108,6 +108,14 @@ function baerchen_enqueue_animaciones() {
 }
 add_action( 'wp_enqueue_scripts', 'baerchen_enqueue_animaciones' );
 
+/* CONTACT FORM 7
+ * Sus archivos (CSS y JS) solo se cargan en la página Contacto, y sin los <p> y <br> que añade al formulario
+ * (la maquetación la lleva el propio código del formulario: inc/formulario-contacto.html).
+ */
+add_filter( 'wpcf7_load_js',  fn() => is_page( 'contacto' ) );
+add_filter( 'wpcf7_load_css', fn() => is_page( 'contacto' ) );
+add_filter( 'wpcf7_autop_or_not', '__return_false' );
+
 /* TEXTO · OLA DE COLOR (inspirada en wearedirect.co)
  * Parte el texto en letras para que una ola de color accent lo recorra al cargar y al pasar el ratón.
  * Uso: <h1><?php echo baerchen_ola( $titular ); ?></h1>  (ya escapa el texto)

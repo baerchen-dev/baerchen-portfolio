@@ -5,8 +5,8 @@
   :root, :host {
     --font-sans: "Plus Jakarta Sans", sans-serif;
     --font-mono: "Geist Mono", monospace;
+    --color-white: #fff;
     --spacing: 0.25rem;
-    --breakpoint-sm: 40rem;
     --container-2xl: 42rem;
     --container-7xl: 80rem;
     --text-sm: 0.875rem;
@@ -33,10 +33,10 @@
     --tracking-wider: 0.05em;
     --leading-tight: 1.25;
     --leading-snug: 1.375;
+    --radius-xl: 0.75rem;
     --radius-4xl: 2rem;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --animate-bounce: bounce 1s infinite;
-    --blur-md: 12px;
     --blur-2xl: 40px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -49,6 +49,7 @@
     --leading-texto: 1.65;
     --text-logo: min(16rem, calc((min(100vw, 80rem) - var(--logo-hueco)) / (var(--logo-letras) * var(--logo-ancho-letra))));
     --animate-marquee: marquee 4s linear infinite;
+    --animate-cinta: marquee 50s linear infinite;
   }
 }
 @layer base {
@@ -241,17 +242,20 @@
   .top-0 {
     top: 0px;
   }
+  .top-3 {
+    top: calc(var(--spacing) * 3);
+  }
   .top-3\.5 {
     top: calc(var(--spacing) * 3.5);
   }
   .top-6 {
     top: calc(var(--spacing) * 6);
   }
+  .right-0 {
+    right: 0px;
+  }
   .-bottom-6 {
     bottom: calc(var(--spacing) * -6);
-  }
-  .bottom-0 {
-    bottom: 0px;
   }
   .bottom-\[7\%\] {
     bottom: 7%;
@@ -313,6 +317,9 @@
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
+  .mt-24 {
+    margin-top: calc(var(--spacing) * 24);
+  }
   .-mr-2 {
     margin-right: calc(var(--spacing) * -2);
   }
@@ -334,9 +341,6 @@
   .hidden {
     display: none;
   }
-  .inline {
-    display: inline;
-  }
   .inline-block {
     display: inline-block;
   }
@@ -352,6 +356,22 @@
   .aspect-9\/8 {
     aspect-ratio: 9/8;
   }
+  .size-3 {
+    width: calc(var(--spacing) * 3);
+    height: calc(var(--spacing) * 3);
+  }
+  .size-4 {
+    width: calc(var(--spacing) * 4);
+    height: calc(var(--spacing) * 4);
+  }
+  .size-5 {
+    width: calc(var(--spacing) * 5);
+    height: calc(var(--spacing) * 5);
+  }
+  .size-6 {
+    width: calc(var(--spacing) * 6);
+    height: calc(var(--spacing) * 6);
+  }
   .size-10 {
     width: calc(var(--spacing) * 10);
     height: calc(var(--spacing) * 10);
@@ -362,8 +382,17 @@
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
+  .h-24 {
+    height: calc(var(--spacing) * 24);
+  }
   .h-auto {
     height: auto;
+  }
+  .h-full {
+    height: 100%;
   }
   .min-h-10 {
     min-height: calc(var(--spacing) * 10);
@@ -407,6 +436,9 @@
   .origin-right {
     transform-origin: 100%;
   }
+  .animate-cinta {
+    animation: var(--animate-cinta);
+  }
   .animate-marquee {
     animation: var(--animate-marquee);
   }
@@ -416,14 +448,17 @@
   .resize {
     resize: both;
   }
+  .scroll-mt-28 {
+    scroll-margin-top: calc(var(--spacing) * 28);
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-  .grid-cols-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
   .grid-cols-\[max-content_1fr\] {
     grid-template-columns: max-content 1fr;
@@ -446,8 +481,14 @@
   .justify-between {
     justify-content: space-between;
   }
+  .justify-center {
+    justify-content: center;
+  }
   .justify-end {
     justify-content: flex-end;
+  }
+  .gap-1 {
+    gap: var(--spacing);
   }
   .gap-2\.5 {
     gap: calc(var(--spacing) * 2.5);
@@ -464,6 +505,9 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
+  .gap-16 {
+    gap: calc(var(--spacing) * 16);
+  }
   .gap-20 {
     gap: calc(var(--spacing) * 20);
   }
@@ -473,8 +517,17 @@
   .gap-x-6 {
     column-gap: calc(var(--spacing) * 6);
   }
+  .gap-x-8 {
+    column-gap: calc(var(--spacing) * 8);
+  }
   .gap-y-1 {
     row-gap: var(--spacing);
+  }
+  .gap-y-2 {
+    row-gap: calc(var(--spacing) * 2);
+  }
+  .gap-y-9 {
+    row-gap: calc(var(--spacing) * 9);
   }
   .gap-y-10 {
     row-gap: calc(var(--spacing) * 10);
@@ -503,12 +556,32 @@
   .rounded-4xl {
     border-radius: var(--radius-4xl);
   }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-0 {
+    border-style: var(--tw-border-style);
+    border-width: 0px;
+  }
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
   .border-bg {
     border-color: var(--color-bg);
+  }
+  .border-bg\/10 {
+    border-color: color-mix(in srgb, #F6F4F0 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-bg) 10%, transparent);
+    }
   }
   .border-bg\/50 {
     border-color: color-mix(in srgb, #F6F4F0 50%, transparent);
@@ -552,10 +625,10 @@
       background-color: color-mix(in oklab, var(--color-ink) 10%, transparent);
     }
   }
-  .bg-ink\/70 {
-    background-color: color-mix(in srgb, #141311 70%, transparent);
+  .bg-white\/50 {
+    background-color: color-mix(in srgb, #fff 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-ink) 70%, transparent);
+      background-color: color-mix(in oklab, var(--color-white) 50%, transparent);
     }
   }
   .mask-b-from-60\% {
@@ -578,11 +651,17 @@
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
-  .px-8 {
-    padding-inline: calc(var(--spacing) * 8);
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
   }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
@@ -608,6 +687,9 @@
   .pt-20 {
     padding-top: calc(var(--spacing) * 20);
   }
+  .pt-24 {
+    padding-top: calc(var(--spacing) * 24);
+  }
   .pt-32 {
     padding-top: calc(var(--spacing) * 32);
   }
@@ -616,6 +698,9 @@
   }
   .pr-4 {
     padding-right: calc(var(--spacing) * 4);
+  }
+  .pr-\[0\.4em\] {
+    padding-right: 0.4em;
   }
   .pb-16 {
     padding-bottom: calc(var(--spacing) * 16);
@@ -660,11 +745,20 @@
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
   }
+  .text-\[clamp\(2rem\,3\.4vw\,3rem\)\] {
+    font-size: clamp(2rem, 3.4vw, 3rem);
+  }
+  .text-\[clamp\(3rem\,4\.5vw\,4rem\)\] {
+    font-size: clamp(3rem, 4.5vw, 4rem);
+  }
   .text-\[clamp\(3rem\,5\.7vw\,5\.125rem\)\] {
     font-size: clamp(3rem, 5.7vw, 5.125rem);
   }
   .text-\[clamp\(3rem\,5vw\,4\.5rem\)\] {
     font-size: clamp(3rem, 5vw, 4.5rem);
+  }
+  .text-\[clamp\(3rem\,6\.7vw\,6rem\)\] {
+    font-size: clamp(3rem, 6.7vw, 6rem);
   }
   .text-logo {
     font-size: var(--text-logo);
@@ -676,6 +770,10 @@
   .leading-\[0\.88\] {
     --tw-leading: 0.88;
     line-height: 0.88;
+  }
+  .leading-\[1\.2\] {
+    --tw-leading: 1.2;
+    line-height: 1.2;
   }
   .leading-\[1\.3\] {
     --tw-leading: 1.3;
@@ -697,6 +795,10 @@
     --tw-leading: var(--leading-texto);
     line-height: var(--leading-texto);
   }
+  .leading-tight {
+    --tw-leading: var(--leading-tight);
+    line-height: var(--leading-tight);
+  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
@@ -717,11 +819,11 @@
     --tw-tracking: var(--tracking-wider);
     letter-spacing: var(--tracking-wider);
   }
+  .break-all {
+    word-break: break-all;
+  }
   .whitespace-nowrap {
     white-space: nowrap;
-  }
-  .text-accent {
-    color: var(--color-accent);
   }
   .text-bg {
     color: var(--color-bg);
@@ -734,6 +836,12 @@
   }
   .text-ink {
     color: var(--color-ink);
+  }
+  .text-ink\/10 {
+    color: color-mix(in srgb, #141311 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-ink) 10%, transparent);
+    }
   }
   .text-ink\/60 {
     color: color-mix(in srgb, #141311 60%, transparent);
@@ -750,6 +858,12 @@
   .uppercase {
     text-transform: uppercase;
   }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .underline-offset-4 {
+    text-underline-offset: 4px;
+  }
   .antialiased {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -757,20 +871,8 @@
   .opacity-0 {
     opacity: 0%;
   }
-  .opacity-60 {
-    opacity: 60%;
-  }
-  .shadow-lg {
-    --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
   .backdrop-blur-2xl {
     --tw-backdrop-blur: blur(var(--blur-2xl));
-    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-  }
-  .backdrop-blur-md {
-    --tw-backdrop-blur: blur(var(--blur-md));
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
@@ -816,6 +918,10 @@
     --tw-ease: var(--ease-out);
     transition-timing-function: var(--ease-out);
   }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
   @media (hover: hover) {
     .group-hover\:scale-104:is(:where(.group):hover *) {
       --tw-scale-x: 104%;
@@ -844,8 +950,20 @@
       --tw-scale-z: 125%;
       scale: var(--tw-scale-x) var(--tw-scale-y);
     }
+    .hover\:border-accent:hover {
+      border-color: var(--color-accent);
+    }
+    .hover\:bg-accent:hover {
+      background-color: var(--color-accent);
+    }
+    .hover\:text-bg:hover {
+      color: var(--color-bg);
+    }
     .hover\:opacity-60:hover {
       opacity: 60%;
+    }
+    .hover\:\[animation-play-state\:paused\]:hover {
+      animation-play-state: paused;
     }
   }
   .focus\:not-sr-only:focus {
@@ -892,8 +1010,14 @@
   .focus-visible\:outline-offset-4:focus-visible {
     outline-offset: 4px;
   }
+  .focus-visible\:outline-bg:focus-visible {
+    outline-color: var(--color-bg);
+  }
   .focus-visible\:outline-current:focus-visible {
     outline-color: currentcolor;
+  }
+  .focus-visible\:outline-ink:focus-visible {
+    outline-color: var(--color-ink);
   }
   .data-open\:visible[data-open] {
     visibility: visible;
@@ -926,20 +1050,17 @@
     }
   }
   @media (width >= 40rem) {
+    .sm\:col-span-2 {
+      grid-column: span 2 / span 2;
+    }
+    .sm\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
     .sm\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-    .sm\:grid-cols-6 {
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-    }
-    .sm\:gap-x-5 {
-      column-gap: calc(var(--spacing) * 5);
-    }
     .sm\:gap-x-8 {
       column-gap: calc(var(--spacing) * 8);
-    }
-    .sm\:px-6 {
-      padding-inline: calc(var(--spacing) * 6);
     }
   }
   @media (width >= 48rem) {
@@ -961,6 +1082,9 @@
     .md\:col-span-7 {
       grid-column: span 7 / span 7;
     }
+    .md\:col-span-8 {
+      grid-column: span 8 / span 8;
+    }
     .md\:col-start-1 {
       grid-column-start: 1;
     }
@@ -970,8 +1094,14 @@
     .md\:row-\[var\(--fila\)\/span_2\] {
       grid-row: var(--fila)/span 2;
     }
+    .md\:mt-16 {
+      margin-top: calc(var(--spacing) * 16);
+    }
     .md\:mt-20 {
       margin-top: calc(var(--spacing) * 20);
+    }
+    .md\:mt-22 {
+      margin-top: calc(var(--spacing) * 22);
     }
     .md\:mt-auto {
       margin-top: auto;
@@ -988,6 +1118,9 @@
     .md\:grid-cols-12 {
       grid-template-columns: repeat(12, minmax(0, 1fr));
     }
+    .md\:gap-6 {
+      gap: calc(var(--spacing) * 6);
+    }
     .md\:gap-x-6 {
       column-gap: calc(var(--spacing) * 6);
     }
@@ -1003,9 +1136,6 @@
     .md\:px-8 {
       padding-inline: calc(var(--spacing) * 8);
     }
-    .md\:py-40 {
-      padding-block: calc(var(--spacing) * 40);
-    }
     .md\:pt-12 {
       padding-top: calc(var(--spacing) * 12);
     }
@@ -1015,15 +1145,6 @@
     .md\:pt-40 {
       padding-top: calc(var(--spacing) * 40);
     }
-    .md\:pb-0 {
-      padding-bottom: 0px;
-    }
-    .md\:pb-8 {
-      padding-bottom: calc(var(--spacing) * 8);
-    }
-    .md\:pb-12 {
-      padding-bottom: calc(var(--spacing) * 12);
-    }
     .md\:pb-16 {
       padding-bottom: calc(var(--spacing) * 16);
     }
@@ -1032,6 +1153,10 @@
     }
     .md\:pb-40 {
       padding-bottom: calc(var(--spacing) * 40);
+    }
+    .md\:text-2xl {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
     }
     .md\:text-7xl {
       font-size: var(--text-7xl);
@@ -1086,6 +1211,9 @@
     }
   }
   @media (width >= 80rem) {
+    .xl\:col-span-4 {
+      grid-column: span 4 / span 4;
+    }
     .xl\:col-span-5 {
       grid-column: span 5 / span 5;
     }
@@ -1095,14 +1223,32 @@
     .xl\:col-span-7 {
       grid-column: span 7 / span 7;
     }
+    .xl\:col-span-9 {
+      grid-column: span 9 / span 9;
+    }
+    .xl\:col-span-12 {
+      grid-column: span 12 / span 12;
+    }
     .xl\:col-start-7 {
       grid-column-start: 7;
+    }
+    .xl\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .xl\:grid-cols-12 {
       grid-template-columns: repeat(12, minmax(0, 1fr));
     }
+    .xl\:justify-between {
+      justify-content: space-between;
+    }
+    .xl\:gap-8 {
+      gap: calc(var(--spacing) * 8);
+    }
     .xl\:gap-x-8 {
       column-gap: calc(var(--spacing) * 8);
+    }
+    .xl\:pt-36 {
+      padding-top: calc(var(--spacing) * 36);
     }
   }
   .\[\&_code\]\:font-mono code {
@@ -1303,6 +1449,143 @@
     transition: none;
   }
 }
+.formulario-contacto .campo {
+  display: block;
+  width: 100%;
+  border-radius: 0;
+  border-style: var(--tw-border-style);
+  border-width: 0px;
+  border-bottom-style: var(--tw-border-style);
+  border-bottom-width: 2px;
+  border-color: color-mix(in srgb, #141311 20%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    border-color: color-mix(in oklab, var(--color-ink) 20%, transparent);
+  }
+  background-color: transparent;
+  padding-block: calc(var(--spacing) * 2);
+  font-size: var(--text-base);
+  line-height: var(--tw-leading, var(--text-base--line-height));
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-ink);
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
+  --tw-outline-style: none;
+  outline-style: none;
+  &::placeholder {
+    color: color-mix(in srgb, #141311 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-ink) 40%, transparent);
+    }
+  }
+  &:focus {
+    border-color: var(--color-ink);
+  }
+}
+.formulario-contacto select.campo {
+  cursor: pointer;
+  appearance: none;
+  padding-right: calc(var(--spacing) * 8);
+}
+.formulario-contacto select.campo:has(option:checked[value=""]) {
+  color: color-mix(in srgb, #141311 40%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    color: color-mix(in oklab, var(--color-ink) 40%, transparent);
+  }
+}
+.formulario-contacto textarea.campo {
+  min-height: calc(var(--spacing) * 30);
+  resize: vertical;
+}
+.formulario-contacto .wpcf7-list-item {
+  margin: 0;
+}
+.formulario-contacto .wpcf7-list-item label {
+  display: flex;
+  cursor: pointer;
+  align-items: flex-start;
+  gap: calc(var(--spacing) * 3);
+}
+.formulario-contacto input[type="checkbox"] {
+  margin-top: calc(var(--spacing) * 0.5);
+  width: calc(var(--spacing) * 5);
+  height: calc(var(--spacing) * 5);
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--color-ink);
+}
+.formulario-contacto .campo.wpcf7-not-valid {
+  border-color: var(--color-accent);
+}
+.formulario-contacto .wpcf7-not-valid-tip {
+  margin-top: calc(var(--spacing) * 2);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-ink);
+  &::before {
+    content: var(--tw-content);
+    width: calc(var(--spacing) * 2);
+    height: calc(var(--spacing) * 2);
+  }
+  &::before {
+    content: var(--tw-content);
+    flex-shrink: 0;
+  }
+  &::before {
+    content: var(--tw-content);
+    border-radius: calc(infinity * 1px);
+  }
+  &::before {
+    content: var(--tw-content);
+    background-color: var(--color-accent);
+  }
+  &::before {
+    content: var(--tw-content);
+    --tw-content: '';
+    content: var(--tw-content);
+  }
+}
+.formulario-contacto .wpcf7 form .wpcf7-response-output {
+  margin: 0px;
+  margin-top: calc(var(--spacing) * 8);
+  border-radius: var(--radius-xl);
+  border-style: var(--tw-border-style);
+  border-width: 0px;
+  border-left-style: var(--tw-border-style);
+  border-left-width: 4px;
+  border-color: var(--color-accent);
+  background-color: color-mix(in srgb, #fff 50%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(in oklab, var(--color-white) 50%, transparent);
+  }
+  padding-inline: calc(var(--spacing) * 5);
+  padding-block: calc(var(--spacing) * 4);
+  font-size: var(--text-base);
+  line-height: var(--tw-leading, var(--text-base--line-height));
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-ink);
+}
+.formulario-contacto .wpcf7 form.sent .wpcf7-response-output {
+  border-color: var(--color-ink);
+  background-color: var(--color-ink);
+  color: var(--color-bg);
+}
+.formulario-contacto .wpcf7 form.submitting button[type="submit"] {
+  pointer-events: none;
+  opacity: 60%;
+}
+.formulario-contacto .wpcf7-spinner {
+  display: none;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -1375,71 +1658,6 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-inset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-ring-inset {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-offset-width {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0px;
-}
-@property --tw-ring-offset-color {
-  syntax: "*";
-  inherits: false;
-  initial-value: #fff;
-}
-@property --tw-ring-offset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
 @property --tw-backdrop-blur {
   syntax: "*";
   inherits: false;
@@ -1504,6 +1722,11 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-content {
+  syntax: "*";
+  initial-value: "";
+  inherits: false;
+}
 @keyframes bounce {
   0%, 100% {
     transform: translateY(-25%);
@@ -1537,20 +1760,6 @@
       --tw-leading: initial;
       --tw-font-weight: initial;
       --tw-tracking: initial;
-      --tw-shadow: 0 0 #0000;
-      --tw-shadow-color: initial;
-      --tw-shadow-alpha: 100%;
-      --tw-inset-shadow: 0 0 #0000;
-      --tw-inset-shadow-color: initial;
-      --tw-inset-shadow-alpha: 100%;
-      --tw-ring-color: initial;
-      --tw-ring-shadow: 0 0 #0000;
-      --tw-inset-ring-color: initial;
-      --tw-inset-ring-shadow: 0 0 #0000;
-      --tw-ring-inset: initial;
-      --tw-ring-offset-width: 0px;
-      --tw-ring-offset-color: #fff;
-      --tw-ring-offset-shadow: 0 0 #0000;
       --tw-backdrop-blur: initial;
       --tw-backdrop-brightness: initial;
       --tw-backdrop-contrast: initial;
@@ -1566,6 +1775,7 @@
       --tw-scale-y: 1;
       --tw-scale-z: 1;
       --tw-outline-style: solid;
+      --tw-content: "";
     }
   }
 }

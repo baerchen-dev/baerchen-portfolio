@@ -1,0 +1,205 @@
+{
+    "key": "group_baerchen_contacto",
+    "title": "Contacto",
+    "fields": [
+        {
+            "key": "field_contacto_etiqueta",
+            "label": "Etiqueta",
+            "name": "contacto_etiqueta",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "/ Contacto"
+        },
+        {
+            "key": "field_contacto_titular",
+            "label": "Titular",
+            "name": "contacto_titular",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "Construyamos algo juntos"
+        },
+        {
+            "key": "field_contacto_etiqueta_email",
+            "label": "Etiqueta del email",
+            "name": "contacto_etiqueta_email",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "/ Escríbeme"
+        },
+        {
+            "key": "field_contacto_email",
+            "label": "Email",
+            "name": "contacto_email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "info@baerchen.dev"
+        },
+        {
+            "key": "field_contacto_respuesta",
+            "label": "Tiempo de respuesta",
+            "name": "contacto_respuesta",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "Respondo en 24–48 h"
+        },
+        {
+            "key": "field_contacto_formulario",
+            "label": "Formulario",
+            "name": "contacto_formulario",
+            "type": "text",
+            "instructions": "Código corto de Contact Form 7 (Contacto → Formularios de contacto). El código del formulario está en el tema: inc/formulario-contacto.html",
+            "required": 0,
+            "placeholder": "[contact-form-7 id=\"…\" title=\"Formulario de contacto\"]"
+        },
+        {
+            "key": "field_contacto_cinta",
+            "label": "Texto de la cinta",
+            "name": "contacto_cinta",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "Diseño UX/UI · Desarrollo WordPress · Mejora de webs"
+        },
+        {
+            "key": "field_servicio_1",
+            "label": "Servicio 1",
+            "name": "servicio_1",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_servicio_1_titulo",
+                    "label": "Título",
+                    "name": "titulo",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "placeholder": "Diseño UX/UI"
+                },
+                {
+                    "key": "field_servicio_1_frase",
+                    "label": "Frase",
+                    "name": "frase",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "placeholder": "De la idea al prototipo, pensando en quien la va a usar."
+                },
+                {
+                    "key": "field_servicio_1_lista",
+                    "label": "Qué incluye",
+                    "name": "lista",
+                    "type": "textarea",
+                    "instructions": "Un punto por línea.",
+                    "required": 0,
+                    "rows": 4,
+                    "new_lines": ""
+                }
+            ]
+        },
+        {
+            "key": "field_servicio_2",
+            "label": "Servicio 2",
+            "name": "servicio_2",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_servicio_2_titulo",
+                    "label": "Título",
+                    "name": "titulo",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "placeholder": "Desarrollo WordPress"
+                },
+                {
+                    "key": "field_servicio_2_frase",
+                    "label": "Frase",
+                    "name": "frase",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "placeholder": "Webs a medida, rápidas y fáciles de editar."
+                },
+                {
+                    "key": "field_servicio_2_lista",
+                    "label": "Qué incluye",
+                    "name": "lista",
+                    "type": "textarea",
+                    "instructions": "Un punto por línea.",
+                    "required": 0,
+                    "rows": 4,
+                    "new_lines": ""
+                }
+            ]
+        },
+        {
+            "key": "field_servicio_3",
+            "label": "Servicio 3",
+            "name": "servicio_3",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_servicio_3_titulo",
+                    "label": "Título",
+                    "name": "titulo",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "placeholder": "Mejora de webs"
+                },
+                {
+                    "key": "field_servicio_3_frase",
+                    "label": "Frase",
+                    "name": "frase",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "placeholder": "Tu web actual, más rápida, accesible y fácil de usar."
+                },
+                {
+                    "key": "field_servicio_3_lista",
+                    "label": "Qué incluye",
+                    "name": "lista",
+                    "type": "textarea",
+                    "instructions": "Un punto por línea.",
+                    "required": 0,
+                    "rows": 4,
+                    "new_lines": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "15"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1790944899
+}

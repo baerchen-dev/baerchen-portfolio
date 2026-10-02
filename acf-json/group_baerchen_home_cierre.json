@@ -1,0 +1,89 @@
+{
+    "key": "group_baerchen_home_cierre",
+    "title": "Home · Cierre",
+    "fields": [
+        {
+            "key": "field_cierre_disponible",
+            "label": "Disponible para proyectos",
+            "name": "cierre_disponible",
+            "type": "true_false",
+            "instructions": "Desactívalo cuando no aceptes proyectos: se oculta el aviso.",
+            "required": 0,
+            "ui": 1,
+            "default_value": 1,
+            "message": ""
+        },
+        {
+            "key": "field_cierre_disponible_texto",
+            "label": "Texto de disponibilidad",
+            "name": "cierre_disponible_texto",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "Disponible para proyectos"
+        },
+        {
+            "key": "field_cierre_titular",
+            "label": "Titular",
+            "name": "cierre_titular",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "¿Tienes un proyecto en mente?"
+        },
+        {
+            "key": "field_cierre_boton_formulario",
+            "label": "Botón del formulario",
+            "name": "cierre_boton_formulario",
+            "type": "text",
+            "instructions": "Lleva al formulario de la página Contacto.",
+            "required": 0,
+            "placeholder": "Rellenar el formulario"
+        },
+        {
+            "key": "field_cierre_boton_email",
+            "label": "Botón del email",
+            "name": "cierre_boton_email",
+            "type": "text",
+            "instructions": "Usa el email de la página Contacto.",
+            "required": 0,
+            "placeholder": "Envíame un email"
+        },
+        {
+            "key": "field_cierre_empleo",
+            "label": "Frase para empleo",
+            "name": "cierre_empleo",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "¿Buscas a alguien para tu equipo?"
+        },
+        {
+            "key": "field_cierre_linkedin",
+            "label": "URL de LinkedIn",
+            "name": "cierre_linkedin",
+            "type": "url",
+            "instructions": "",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1790956834
+}
