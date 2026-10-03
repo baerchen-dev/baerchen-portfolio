@@ -34,7 +34,8 @@ foreach ( preg_split( '/\r\n|\r|\n/', $stack ) as $linea ) {
 $pagina_sobre = get_page_by_path( 'sobre-mi' );
 $url_sobre    = ( $pagina_sobre && 'publish' === $pagina_sobre->post_status ) ? get_permalink( $pagina_sobre ) : '';
 ?>
-<section id="sobre-mi" class="relative md:bg-ink" data-crecer data-fondo="oscuro">
+<!-- data-cortina: al terminar de verse se queda fija y el cierre oscuro sube por encima (top calculado en header.js) -->
+<section id="sobre-mi" class="relative md:sticky md:bg-ink" data-crecer data-cortina data-fondo="oscuro">
   <div class="relative bg-bg" data-crecer-panel data-fondo="claro">
     <div class="max-w-7xl mx-auto px-4 md:px-8 py-24 md:pt-24 md:pb-40">
       <div class="grid grid-cols-4 gap-x-4 gap-y-12 md:grid-cols-8 md:gap-x-6 xl:grid-cols-12 xl:gap-x-8">

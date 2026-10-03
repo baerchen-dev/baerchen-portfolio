@@ -4,7 +4,7 @@
  * WordPress usa esta plantilla automáticamente para la página de inicio (Ajustes → Lectura).
  * Efecto cortina (md+): la sección que va a ser tapada lleva md:sticky + data-cortina (header.js calcula su top para
  * que se fije al terminar de verse); la siguiente, con fondo opaco y position relative, sube por encima. El footer, sin efecto.
- * Orden: hero (cortina) → trabajos (sube por encima) → sobre mí (se abre sola desde la foto, data-crecer) → cierre (oscuro, antes del footer).
+ * Orden: hero (cortina) → trabajos (sube por encima) → sobre mí (se abre desde la foto, data-crecer; luego cortina) → cierre (sube por encima) → footer.
  */
 get_header(); ?>
 
