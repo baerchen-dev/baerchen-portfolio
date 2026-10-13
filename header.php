@@ -46,9 +46,9 @@ $es_home = is_front_page();
       <?php get_template_part( 'components/boton-hablamos', null, array( 'clase' => 'hidden md:inline-flex' ) ); ?>
 
       <button type="button" class="menu-toggle group relative -mr-2 size-10 cursor-pointer focus-visible:outline-2 focus-visible:outline-current" aria-controls="menu-principal" aria-expanded="false" aria-label="<?php esc_attr_e( 'Abrir menú', 'baerchen' ); ?>" data-label-abrir="<?php esc_attr_e( 'Abrir menú', 'baerchen' ); ?>" data-label-cerrar="<?php esc_attr_e( 'Cerrar menú', 'baerchen' ); ?>">
-        <!-- Dos líneas que se cruzan en ✕ al abrir -->
-        <span class="absolute left-2 top-3.5 h-0.5 w-6 bg-current transition-[top,rotate] duration-300 group-aria-expanded:top-4.75 group-aria-expanded:rotate-45" aria-hidden="true"></span>
-        <span class="absolute left-2 top-6 h-0.5 w-6 bg-current transition-[top,rotate] duration-300 group-aria-expanded:top-4.75 group-aria-expanded:-rotate-45" aria-hidden="true"></span>
+        <!-- Dos líneas (larga arriba, corta abajo a la derecha) que se cruzan en ✕ al abrir; la corta crece para que la ✕ sea simétrica -->
+        <span class="absolute right-1 top-4 h-[1.5px] w-7.5 bg-current transition-[top,rotate] duration-300 group-aria-expanded:top-4.75 group-aria-expanded:rotate-45" aria-hidden="true"></span>
+        <span class="absolute right-1 top-5.5 h-[1.5px] w-4.75 bg-current transition-[top,rotate,width] duration-300 group-aria-expanded:top-4.75 group-aria-expanded:w-7.5 group-aria-expanded:-rotate-45" aria-hidden="true"></span>
       </button>
     </div>
 

@@ -245,14 +245,17 @@
   .top-3 {
     top: calc(var(--spacing) * 3);
   }
-  .top-3\.5 {
-    top: calc(var(--spacing) * 3.5);
+  .top-4 {
+    top: calc(var(--spacing) * 4);
   }
-  .top-6 {
-    top: calc(var(--spacing) * 6);
+  .top-5\.5 {
+    top: calc(var(--spacing) * 5.5);
   }
   .right-0 {
     right: 0px;
+  }
+  .right-1 {
+    right: var(--spacing);
   }
   .-bottom-6 {
     bottom: calc(var(--spacing) * -6);
@@ -262,9 +265,6 @@
   }
   .left-0 {
     left: 0px;
-  }
-  .left-2 {
-    left: calc(var(--spacing) * 2);
   }
   .left-\[6\%\] {
     left: 6%;
@@ -376,9 +376,6 @@
     width: calc(var(--spacing) * 10);
     height: calc(var(--spacing) * 10);
   }
-  .h-0\.5 {
-    height: calc(var(--spacing) * 0.5);
-  }
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
@@ -387,6 +384,9 @@
   }
   .h-24 {
     height: calc(var(--spacing) * 24);
+  }
+  .h-\[1\.5px\] {
+    height: 1.5px;
   }
   .h-auto {
     height: auto;
@@ -400,8 +400,11 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-6 {
-    width: calc(var(--spacing) * 6);
+  .w-4\.75 {
+    width: calc(var(--spacing) * 4.75);
+  }
+  .w-7\.5 {
+    width: calc(var(--spacing) * 7.5);
   }
   .w-\[35\%\] {
     width: 35%;
@@ -886,6 +889,11 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .transition-\[top\,rotate\,width\] {
+    transition-property: top,rotate,width;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .transition-\[top\,rotate\] {
     transition-property: top,rotate;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -932,6 +940,9 @@
   }
   .group-aria-expanded\:top-4\.75:is(:where(.group)[aria-expanded="true"] *) {
     top: calc(var(--spacing) * 4.75);
+  }
+  .group-aria-expanded\:w-7\.5:is(:where(.group)[aria-expanded="true"] *) {
+    width: calc(var(--spacing) * 7.5);
   }
   .group-aria-expanded\:-rotate-45:is(:where(.group)[aria-expanded="true"] *) {
     rotate: calc(45deg * -1);
