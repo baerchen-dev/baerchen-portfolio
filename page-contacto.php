@@ -36,13 +36,13 @@ $servicios_defecto = array(
       <div class="col-span-4 md:col-span-8 xl:col-span-5 flex flex-col gap-16 xl:justify-between">
         <div class="flex flex-col gap-8">
           <p class="font-mono text-base md:text-lg uppercase leading-none"><?php echo esc_html( $etiqueta ); ?></p>
-          <h1 class="font-medium text-[clamp(3rem,4.5vw,4rem)] leading-none"><?php echo baerchen_ola( $titular ); // ola de color al cargar ?></h1>
+          <h1 class="text-titulo-seccion"><?php echo baerchen_ola( $titular ); // ola de color al cargar ?></h1>
         </div>
 
         <div class="flex flex-col gap-6">
           <p class="font-mono text-base md:text-lg uppercase leading-none"><?php echo esc_html( $etiqueta_email ); ?></p>
-          <a href="<?php echo esc_url( 'mailto:' . $email ); ?>" class="self-start font-medium text-[clamp(2rem,3.4vw,3rem)] leading-none break-all cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"><?php echo esc_html( $email ); ?></a>
-          <?php if ( $respuesta ) : ?><p class="font-mono text-sm uppercase text-ink/60"><?php echo esc_html( $respuesta ); ?></p><?php endif; ?>
+          <a href="<?php echo esc_url( 'mailto:' . $email ); ?>" class="self-start text-email break-all cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"><?php echo esc_html( $email ); ?></a>
+          <?php if ( $respuesta ) : ?><p class="font-mono font-medium text-sm uppercase leading-[1.4] text-ink/60"><?php echo esc_html( $respuesta ); ?></p><?php endif; ?>
         </div>
       </div>
 

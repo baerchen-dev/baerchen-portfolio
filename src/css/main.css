@@ -40,6 +40,12 @@
   --text-boton: clamp(1.5rem, 1.086rem + 1.768vw, 2.5rem);              /* Botón (Geist Mono) · 24 → 40 · botones del cierre */
   --text-boton--line-height: 1;
   --text-boton--font-weight: 500;
+  --text-email: clamp(2rem, 1.586rem + 1.768vw, 3rem);                  /* Email · 32 → 48 · email grande de Contacto */
+  --text-email--line-height: 1;
+  --text-email--font-weight: 500;
+  --text-cinta: clamp(3rem, 1.757rem + 5.304vw, 6rem);                  /* Cinta · 48 → 96 · marquesina de Contacto */
+  --text-cinta--line-height: 1.2;   /* no 1: el overflow-hidden cortaría las tildes de las mayúsculas (Ñ, Í) */
+  --text-cinta--font-weight: 800;
 
   /* Logo grande de la Home → clase text-logo
    * Llena el hueco que dejan libre HABLAMOS y el burger según el número de letras del título.
@@ -143,10 +149,10 @@
  * (inc/formulario-contacto.html).
  */
 .formulario-contacto .campo {
-  @apply block w-full rounded-none border-0 border-b-2 border-ink/20 bg-transparent py-2 text-base font-medium text-ink outline-none transition-colors duration-300 placeholder:text-ink/40 focus:border-ink;
+  @apply block w-full rounded-none border-0 border-b-2 border-ink/50 bg-transparent py-2 text-base font-medium text-ink outline-none transition-colors duration-300 placeholder:text-ink/60 focus:border-ink;
 }
 .formulario-contacto select.campo { @apply cursor-pointer appearance-none pr-8; }
-.formulario-contacto select.campo:has(option:checked[value=""]) { @apply text-ink/40; }
+.formulario-contacto select.campo:has(option:checked[value=""]) { @apply text-ink/60; }
 .formulario-contacto textarea.campo { @apply min-h-30 resize-y; }
 
 /* Casilla de privacidad */
