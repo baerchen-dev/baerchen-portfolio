@@ -2,6 +2,7 @@
 /**
  * ICONO SVG (en línea: toma el color del texto con currentColor)
  * Uso: get_template_part( 'components/icono', null, array( 'nombre' => 'flecha-derecha', 'clase' => 'size-5' ) );
+ * $args['trazo'] Grosor del trazo en unidades de la caja de 24 (por defecto 1.5; 2 en iconos grandes junto a texto Medium)
  * Nombres: flecha-derecha (→), flecha-abajo (↓), flecha-diagonal (↗), desplegable (⌄)
  * Decorativo (aria-hidden): el texto del enlace o del botón ya dice qué hace.
  */
@@ -13,6 +14,7 @@ $trazos = array(
 );
 $nombre = $args['nombre'] ?? 'flecha-derecha';
 $clase  = $args['clase'] ?? 'size-5';
+$trazo  = $args['trazo'] ?? 1.5;
 if ( ! isset( $trazos[ $nombre ] ) ) return;
 ?>
-<svg class="<?php echo esc_attr( $clase ); ?>" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="<?php echo esc_attr( $trazos[ $nombre ] ); ?>"/></svg>
+<svg class="<?php echo esc_attr( $clase ); ?>" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="<?php echo esc_attr( $trazo ); ?>" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="<?php echo esc_attr( $trazos[ $nombre ] ); ?>"/></svg>

@@ -21,6 +21,26 @@
   --tracking-titulo: -0.02em;   /* títulos grandes en negrita → tracking-titulo */
   --leading-texto:   1.65;      /* párrafos y textos largos   → leading-texto */
 
+  /* ESTILOS DE TEXTO = estilos de texto de Figma (mismo nombre). Cada clase lleva tamaño, interlineado, espaciado y peso.
+   * Tamaño fluido: valor de Figma Móvil a 375px → valor de Figma Escritorio a 1280px (ancho máximo del contenido).
+   * Mezclan rem + vw para que el zoom del navegador siga ampliando el texto (WCAG 1.4.4).
+   */
+  --text-titulo-pagina: clamp(3rem, 2.119rem + 3.757vw, 5.125rem);      /* Título página · 48 → 82 · hero y cierre */
+  --text-titulo-pagina--line-height: 0.9;
+  --text-titulo-pagina--letter-spacing: -0.02em;
+  --text-titulo-pagina--font-weight: 700;
+  --text-titulo-seccion: clamp(3rem, 2.379rem + 2.652vw, 4.5rem);       /* Título sección · 48 → 72 */
+  --text-titulo-seccion--line-height: 0.9;
+  --text-titulo-seccion--letter-spacing: -0.02em;
+  --text-titulo-seccion--font-weight: 700;
+  --text-parrafo-destacado: clamp(1.125rem, 1.073rem + 0.221vw, 1.25rem); /* Párrafo destacado · 18 → 20 */
+  --text-parrafo-destacado--line-height: 1.3;
+  --text-parrafo: clamp(1rem, 0.948rem + 0.221vw, 1.125rem);            /* Párrafo · 16 → 18 */
+  --text-parrafo--line-height: 1.3;
+  --text-boton: clamp(1.5rem, 1.086rem + 1.768vw, 2.5rem);              /* Botón (Geist Mono) · 24 → 40 · botones del cierre */
+  --text-boton--line-height: 1;
+  --text-boton--font-weight: 500;
+
   /* Logo grande de la Home → clase text-logo
    * Llena el hueco que dejan libre HABLAMOS y el burger según el número de letras del título.
    * --logo-ancho-letra: ancho medio de una letra de la fuente del logo en mayúsculas (en em). Máximo: 16rem

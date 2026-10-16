@@ -20,7 +20,7 @@ $proyectos = new WP_Query( array(
 <section id="trabajos" class="relative bg-ink text-bg" data-fondo="oscuro">
   <div class="max-w-7xl mx-auto px-4 md:px-8 pt-32 md:pt-40 pb-32 md:pb-16">
 
-    <h2 class="font-medium text-[clamp(3rem,5vw,4.5rem)] leading-none"><?php echo baerchen_ola( __( 'Creando proyectos', 'baerchen' ), false ); // 72px · ola al entrar en pantalla ?></h2>
+    <h2 class="text-titulo-seccion"><?php echo baerchen_ola( __( 'Creando proyectos', 'baerchen' ), false ); // ola al entrar en pantalla ?></h2>
 
     <?php if ( $proyectos->have_posts() ) : ?>
       <div class="mt-16 md:mt-20 grid grid-cols-4 gap-x-4 gap-y-16 md:grid-cols-8 md:gap-x-6 md:gap-y-20 xl:grid-cols-12 xl:gap-x-8">

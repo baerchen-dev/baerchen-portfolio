@@ -31,16 +31,6 @@
             "new_lines": ""
         },
         {
-            "key": "field_sobremi_stack",
-            "label": "Stack",
-            "name": "sobremi_stack",
-            "type": "textarea",
-            "instructions": "Una línea por grupo: NOMBRE | valores. Ej.: DISEÑO | Figma · UX/UI · Prototipado",
-            "required": 0,
-            "rows": 3,
-            "new_lines": ""
-        },
-        {
             "key": "field_sobremi_foto",
             "label": "Foto",
             "name": "sobremi_foto",
@@ -70,5 +60,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1790856340
+    "modified": 1792155716
 }

@@ -50,7 +50,7 @@ $logo_url  = file_exists( get_template_directory() . $logo_ruta ) ? get_template
 
   <!-- TEXTO -->
   <div class="mt-4 flex flex-col gap-4">
-    <p class="text-lg leading-snug">
+    <p class="text-parrafo">
       <span class="font-bold <?php echo esc_attr( $c_nombre ); ?>"><?php the_title(); ?><?php if ( $url_web ) : ?> <span aria-hidden="true">↗</span><span class="sr-only"><?php esc_html_e( '(se abre en una pestaña nueva)', 'baerchen' ); ?></span><?php endif; ?></span>
       <?php if ( $frase ) : ?><span class="<?php echo esc_attr( $c_frase ); ?>"><?php echo esc_html( $frase ); ?></span><?php endif; ?>
     </p>

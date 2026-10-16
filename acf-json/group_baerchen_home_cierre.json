@@ -38,7 +38,7 @@
             "type": "text",
             "instructions": "Lleva al formulario de la página Contacto.",
             "required": 0,
-            "placeholder": "Rellenar el formulario"
+            "placeholder": "Ir al formulario"
         },
         {
             "key": "field_cierre_boton_email",

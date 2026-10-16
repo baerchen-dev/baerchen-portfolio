@@ -20,15 +20,7 @@ $campo = function ( $nombre, $defecto ) {
 $etiqueta = $campo( 'sobremi_etiqueta', __( '/ Sobre mí', 'baerchen' ) );
 $titular  = $campo( 'sobremi_titular', __( 'Doy vida a productos digitales', 'baerchen' ) );
 $parrafo  = $campo( 'sobremi_parrafo', __( 'Soy Fran, diseñador UX/UI y desarrollador web. Diseño en Figma y lo llevo a WordPress sin constructores: webs rápidas, accesibles y hechas a medida, de principio a fin.', 'baerchen' ) );
-$stack    = $campo( 'sobremi_stack', "DISEÑO | Figma · UX/UI · Prototipado\nDESARROLLO | WordPress · PHP · Tailwind · JavaScript\nCALIDAD | Accesibilidad · Rendimiento · SEO" );
 $foto_id  = $campo( 'sobremi_foto', 0 );
-
-// Stack: una línea por grupo, "NOMBRE | valores"
-$grupos = array();
-foreach ( preg_split( '/\r\n|\r|\n/', $stack ) as $linea ) {
-  $partes = array_map( 'trim', explode( '|', $linea, 2 ) );
-  if ( 2 === count( $partes ) && $partes[0] !== '' ) $grupos[] = $partes;
-}
 
 // Enlace a la página Sobre mí: si está publicada
 $pagina_sobre = get_page_by_path( 'sobre-mi' );
@@ -44,18 +36,9 @@ $url_sobre    = ( $pagina_sobre && 'publish' === $pagina_sobre->post_status ) ? 
         <div class="col-span-4 md:col-span-5 xl:col-span-7 flex flex-col">
           <p class="font-mono text-base md:text-lg uppercase leading-none"><?php echo esc_html( $etiqueta ); ?></p>
 
-          <h2 class="mt-8 font-medium text-[clamp(3rem,5vw,4.5rem)] leading-[0.9]"><?php echo baerchen_ola( $titular, false ); // ola al entrar en pantalla ?></h2>
+          <h2 class="mt-8 text-titulo-seccion"><?php echo baerchen_ola( $titular, false ); // ola al entrar en pantalla ?></h2>
 
-          <p class="mt-12 md:mt-20 max-w-[28.75rem] text-lg leading-[1.3]"><?php echo esc_html( $parrafo ); ?></p>
-
-          <?php if ( $grupos ) : ?>
-            <dl class="mt-12 md:mt-20 grid grid-cols-[max-content_1fr] gap-x-6 gap-y-1 font-mono text-base md:text-lg leading-snug">
-              <?php foreach ( $grupos as $grupo ) : ?>
-                <dt class="uppercase"><?php echo esc_html( $grupo[0] ); ?></dt>
-                <dd><?php echo esc_html( $grupo[1] ); ?></dd>
-              <?php endforeach; ?>
-            </dl>
-          <?php endif; ?>
+          <p class="mt-12 md:mt-20 max-w-[28.75rem] text-parrafo"><?php echo esc_html( $parrafo ); ?></p>
 
           <?php if ( $url_sobre ) : ?>
             <!-- Abajo del todo, alineado con el pie de la foto (como VER TRABAJOS en el hero) -->

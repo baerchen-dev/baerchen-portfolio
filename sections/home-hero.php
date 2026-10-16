@@ -44,9 +44,9 @@ $url_cta = '#trabajos';   // sección Trabajos de la Home (sections/home-trabajo
       <div class="col-span-4 md:col-span-7 order-1 md:order-2 flex flex-col">
         <p class="font-mono text-base md:text-lg uppercase leading-none"><?php echo esc_html( $etiqueta ); ?></p>
 
-        <h1 class="mt-8 font-medium text-[clamp(3rem,5.7vw,5.125rem)] leading-[0.88]"><?php echo baerchen_ola( $titular ); // ola de color (functions.php) ?></h1>
+        <h1 class="mt-8 text-titulo-pagina"><?php echo baerchen_ola( $titular ); // ola de color (functions.php) ?></h1>
 
-        <p class="mt-12 md:mt-20 max-w-[36.875rem] text-lg md:text-xl leading-[1.25]"><?php echo esc_html( $parrafo ); ?></p>
+        <p class="mt-12 md:mt-20 max-w-[36.875rem] text-parrafo-destacado"><?php echo esc_html( $parrafo ); ?></p>
 
         <!-- Solo md+: abajo del todo, alineado con el pie de la foto. En móvil se baja deslizando -->
         <a href="<?php echo esc_url( $url_cta ); ?>" class="hidden md:block md:mt-auto self-start font-mono text-base uppercase leading-none cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">

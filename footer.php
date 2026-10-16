@@ -4,8 +4,8 @@
 
 <!-- ============================================================ FOOTER ============================================================
  * Retícula (Figma): móvil 4 columnas + 16px de medianil · lg+ 12 columnas de 72px + 32px = 1216px (max-w-7xl px-8)
- * Escritorio (lg+): logo en las columnas 1–4 (abajo) · bloque de contenido en las columnas 5–12
- * Móvil: todo apilado y el logo al final, como firma
+ * Escritorio (lg+): osito arriba y logo abajo en las columnas 1–4 · bloque de contenido en las columnas 5–12
+ * Móvil: todo apilado y el osito + logo al final, como firma
 -->
 <footer class="bg-ink text-bg" data-fondo="oscuro">
   <div class="max-w-7xl mx-auto px-4 md:px-8 py-7.5">
@@ -36,10 +36,13 @@
 
       </div>
 
-      <!-- LOGO · columnas 1–4, abajo (en móvil va al final) -->
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="col-span-4 lg:col-start-1 lg:col-span-4 lg:row-start-1 self-end justify-self-start font-extrabold text-5xl lg:text-[3.5rem] uppercase tracking-titulo leading-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
-        <?php bloginfo( 'name' ); ?>
-      </a>
+      <!-- OSITO + LOGO · columnas 1–4: osito arriba (alineado con NAVEGACIÓN) y logo abajo · en móvil, los dos al final -->
+      <div class="col-span-4 lg:col-start-1 lg:col-span-4 lg:row-start-1 flex flex-col items-start justify-between gap-8">
+        <?php get_template_part( 'components/osito', null, array( 'clase' => 'w-20 lg:w-27 h-auto' ) ); ?>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="font-extrabold text-5xl lg:text-[3.5rem] uppercase tracking-titulo leading-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
+          <?php bloginfo( 'name' ); ?>
+        </a>
+      </div>
 
     </div>
   </div>
