@@ -23,6 +23,7 @@ function baerchen_tamanos_imagen() {
   add_image_size( 'baerchen-retrato', 976, 1448, true );   // foto del hero · 2:3 (Figma 488 × 724)
   add_image_size( 'baerchen-tarjeta', 1184, 1052, true );  // tarjeta de proyecto · 9:8 (Figma 592 × 527)
   add_image_size( 'baerchen-vertical', 976, 1308, true );  // foto de Sobre mí en la Home · 3:4 (Figma 488 × 654)
+  add_image_size( 'baerchen-presentacion', 976, 1220, true ); // foto del hero de la página Sobre mí · 4:5 (Figma 488 × 610)
   add_image_size( 'baerchen-ancho', 2432, 0, false );      // imágenes grandes del caso de estudio (hasta 1216px)
 }
 add_action( 'after_setup_theme', 'baerchen_tamanos_imagen' );
@@ -120,16 +121,33 @@ add_filter( 'wpcf7_autop_or_not', '__return_false' );
  * Parte el texto en letras para que una ola de color accent lo recorra al cargar y al pasar el ratón.
  * Uso: <h1><?php echo baerchen_ola( $titular ); ?></h1>  (ya escapa el texto)
  *      baerchen_ola( $texto, false ) → la ola empieza al entrar en pantalla (titulares que no se ven al cargar)
+ * Los saltos de línea del texto (campos de varias líneas) se convierten en <br>.
  * Los lectores de pantalla leen el texto entero (sr-only); las letras sueltas van ocultas (aria-hidden).
  * Animación en src/css/main.css (.ola) · al entrar en pantalla y al pasar el ratón: assets/js/animaciones.js
  */
 function baerchen_ola( $texto, $al_cargar = true ) {
   $letras = '';
+  $texto  = str_replace( "\r", '', $texto );
   foreach ( mb_str_split( $texto ) as $i => $letra ) {
+    if ( "\n" === $letra ) { $letras .= '<br>'; continue; }
     $letras .= ' ' === $letra ? ' ' : '<span style="--i:' . (int) $i . '">' . esc_html( $letra ) . '</span>';
   }
   $clases = $al_cargar ? 'ola ola-activa' : 'ola';
   return '<span class="sr-only">' . esc_html( $texto ) . '</span><span class="' . $clases . '" aria-hidden="true">' . $letras . '</span>';
+}
+
+/* TEXTO · LISTA DE UNA LÍNEA POR ELEMENTO (campos ACF de texto largo; ACF gratuito no tiene repetidores)
+ * Cada línea se parte por "|": "Título | Texto" → array( 'Título', 'Texto' ). Se descartan las líneas vacías
+ * y las que no tienen el número de partes pedido.
+ * Uso: foreach ( baerchen_lista( $texto, 2 ) as list( $titulo, $parrafo ) ) { … }
+ */
+function baerchen_lista( $texto, $partes = 2 ) {
+  $lista = array();
+  foreach ( preg_split( '/\r\n|\r|\n/', (string) $texto ) as $linea ) {
+    $trozos = array_map( 'trim', explode( '|', $linea, $partes ) );
+    if ( count( $trozos ) === $partes && '' !== $trozos[0] ) $lista[] = $trozos;
+  }
+  return $lista;
 }
 
 /* MENÚS — CLASES EN LOS ENLACES
@@ -142,6 +160,18 @@ function baerchen_nav_link_class( $atts, $item, $args ) {
   return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'baerchen_nav_link_class', 10, 3 );
+
+/* FAVICON (osito, assets/img/)
+ * favicon.svg cambia de color solo: ink en modo claro, crema en modo oscuro (media query dentro del SVG).
+ * apple-touch-icon.png: 180 × 180, fondo crema opaco (iOS no admite transparencia ni SVG).
+ * Si algún día se pone un "Icono del sitio" en Ajustes → Generales, WordPress añadiría el suyo: dejarlo vacío.
+ */
+function baerchen_favicon() {
+  $img = get_template_directory_uri() . '/assets/img/';
+  echo '<link rel="icon" href="' . esc_url( $img . 'favicon.svg' ) . '" type="image/svg+xml">' . "\n";
+  echo '<link rel="apple-touch-icon" href="' . esc_url( $img . 'apple-touch-icon.png' ) . '">' . "\n";
+}
+add_action( 'wp_head', 'baerchen_favicon' );
 
 /* PRECONNECT A GOOGLE FONTS */
 function baerchen_resource_hints( $urls, $relation_type ) {

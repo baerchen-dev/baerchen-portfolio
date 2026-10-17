@@ -1,7 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="64 49 290 293" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-  <rect x="64" y="49" width="50" height="99" rx="25" stroke="none"/>
-  <rect x="304" y="49" width="50" height="99" rx="25" stroke="none"/>
-  <polygon points="164,170 254,170 279,206 226,249 192,249 139,206" stroke-width="14"/>
-  <rect x="187" y="240" width="44" height="54" stroke="none"/>
-  <polyline points="112,300 146,325 209,294 272,325 306,300" fill="none" stroke-width="33"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 286" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M13.84 59.57C-1.32 17.88 72.55-9.01 87.72 32.68" stroke="currentColor" stroke-width="23.6"/>
+  <path d="M276.16 59.57C291.32 17.88 217.45-9.01 202.28 32.68" stroke="currentColor" stroke-width="23.6"/>
+  <rect x="41.3" y="94.61" width="35.76" height="45.77" rx="17.88" fill="currentColor"/>
+  <rect x="195.78" y="108.92" width="70.09" height="31.47" rx="15.73" fill="currentColor"/>
+  <path d="M112.82 163.27h64.36l17.88 25.75-37.9 30.75h-24.32l-37.9-30.75z" fill="currentColor" stroke="currentColor" stroke-width="10"/>
+  <rect x="129.27" y="213.33" width="31.47" height="38.62" rx="15.73" fill="currentColor"/>
+  <path d="M75.63 256.24l24.32 17.88L145 251.95l45.06 22.17 24.31-17.88" stroke="currentColor" stroke-width="23.6"/>
 </svg>
