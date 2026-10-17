@@ -1,7 +1,9 @@
 <?php
 /**
  * SOBRE MÍ · PRESENTACIÓN (Figma: bloque "01 — Hero" del marco Sobre mí)
- * Etiqueta → titular (h1, ola de color al cargar) → foto en las columnas 1–5 + texto en las 7–12, centrado en vertical.
+ * Etiqueta → titular (h1, ola de color al cargar) → foto en las columnas 1–5 + texto en las 7–12.
+ * Desde md, como en la Home: el texto empieza a la altura del borde superior de la foto y el enlace mono queda abajo,
+ * alineado con su borde inferior (mismo criterio que VER TRABAJOS y MÁS SOBRE MÍ).
  * Tablet: foto y texto en 4 + 4 columnas. Móvil: todo apilado (etiqueta → titular → foto → texto).
  * "CONOCE CÓMO TRABAJO ↓" baja al bloque siguiente (#como-trabajo).
  */
@@ -42,11 +44,11 @@ $foto_id    = $campo( 'sobre_foto', 0 );
         <?php endif; ?>
       </div>
 
-      <!-- TEXTO · columnas 7–12, centrado en vertical con la foto -->
-      <div class="col-span-4 xl:col-start-7 xl:col-span-6 self-center flex flex-col gap-8">
+      <!-- TEXTO · columnas 7–12: arriba con la foto y el enlace abajo, alineado con su pie -->
+      <div class="col-span-4 xl:col-start-7 xl:col-span-6 flex flex-col gap-8">
         <p class="text-entradilla"><?php echo esc_html( $entradilla ); ?></p>
         <p class="text-parrafo text-ink/60"><?php echo esc_html( $parrafo ); ?></p>
-        <a href="#como-trabajo" class="self-start flex items-center gap-2 font-mono text-base uppercase leading-none cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
+        <a href="#como-trabajo" class="md:mt-auto self-start flex items-center gap-2 font-mono text-base uppercase leading-none cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
           <?php echo esc_html( $enlace ); ?>
           <?php get_template_part( 'components/icono', null, array( 'nombre' => 'flecha-abajo', 'clase' => 'size-[1em] motion-safe:animate-bounce' ) ); ?>
         </a>
