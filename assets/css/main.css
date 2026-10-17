@@ -589,11 +589,6 @@
     margin-inline-start: calc(calc(var(--spacing) * -0.5) * var(--tw-space-x-reverse));
     margin-inline-end: calc(calc(var(--spacing) * -0.5) * calc(1 - var(--tw-space-x-reverse)));
   }
-  :where(.-space-x-1 > :not(:last-child)) {
-    --tw-space-x-reverse: 0;
-    margin-inline-start: calc(calc(var(--spacing) * -1) * var(--tw-space-x-reverse));
-    margin-inline-end: calc(calc(var(--spacing) * -1) * calc(1 - var(--tw-space-x-reverse)));
-  }
   .gap-y-2 {
     row-gap: calc(var(--spacing) * 2);
   }
@@ -614,9 +609,6 @@
   }
   .gap-y-16 {
     row-gap: calc(var(--spacing) * 16);
-  }
-  .self-center {
-    align-self: center;
   }
   .self-start {
     align-self: flex-start;
@@ -1253,9 +1245,6 @@
     }
     .md\:mt-auto {
       margin-top: auto;
-    }
-    .md\:block {
-      display: block;
     }
     .md\:flex {
       display: flex;
