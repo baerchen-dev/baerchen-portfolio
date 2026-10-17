@@ -49,8 +49,9 @@ $url_cta = '#trabajos';   // sección Trabajos de la Home (sections/home-trabajo
         <p class="mt-12 md:mt-20 max-w-[36.875rem] text-parrafo-destacado"><?php echo esc_html( $parrafo ); ?></p>
 
         <!-- Solo md+: abajo del todo, alineado con el pie de la foto. En móvil se baja deslizando -->
-        <a href="<?php echo esc_url( $url_cta ); ?>" class="hidden md:block md:mt-auto self-start font-mono text-base uppercase leading-none cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
-          <?php echo esc_html( $cta ); ?> <span class="inline-block motion-safe:animate-bounce" aria-hidden="true">↓</span>
+        <a href="<?php echo esc_url( $url_cta ); ?>" class="hidden md:flex md:mt-auto self-start items-center gap-2 font-mono text-base uppercase leading-none cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
+          <?php echo esc_html( $cta ); ?>
+          <?php get_template_part( 'components/icono', null, array( 'nombre' => 'flecha-abajo', 'clase' => 'size-[1em] motion-safe:animate-bounce' ) ); ?>
         </a>
       </div>
 

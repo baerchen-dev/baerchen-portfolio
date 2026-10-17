@@ -42,8 +42,9 @@ $url_sobre    = ( $pagina_sobre && 'publish' === $pagina_sobre->post_status ) ? 
 
           <?php if ( $url_sobre ) : ?>
             <!-- Abajo del todo, alineado con el pie de la foto (como VER TRABAJOS en el hero) -->
-            <a href="<?php echo esc_url( $url_sobre ); ?>" class="mt-12 md:mt-auto md:pt-12 self-start font-mono text-base uppercase leading-none cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
-              <?php esc_html_e( 'Más sobre mí', 'baerchen' ); ?> <span aria-hidden="true">→</span>
+            <a href="<?php echo esc_url( $url_sobre ); ?>" class="group mt-12 md:mt-auto md:pt-12 self-start flex items-center gap-2 font-mono text-base uppercase leading-none cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
+              <?php esc_html_e( 'Más sobre mí', 'baerchen' ); ?>
+              <?php get_template_part( 'components/icono', null, array( 'nombre' => 'flecha-derecha', 'clase' => 'size-[1em]', 'mover' => 'derecha' ) ); ?>
             </a>
           <?php endif; ?>
         </div>

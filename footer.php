@@ -38,7 +38,11 @@
 
       <!-- OSITO + LOGO · columnas 1–4: osito arriba (alineado con NAVEGACIÓN) y logo abajo · en móvil, los dos al final -->
       <div class="col-span-4 lg:col-start-1 lg:col-span-4 lg:row-start-1 flex flex-col items-start justify-between gap-8">
-        <?php get_template_part( 'components/osito', null, array( 'clase' => 'w-20 lg:w-27 h-auto' ) ); ?>
+        <!-- El osito también lleva a la portada (como todo logo). tabindex -1 + aria-hidden: el teclado y los lectores
+             de pantalla lo saltan, porque el nombre BAERCHEN de abajo ya es ese mismo enlace (sin enlaces duplicados) -->
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" tabindex="-1" aria-hidden="true" class="block cursor-pointer hover:opacity-60 transition-opacity duration-300">
+          <?php get_template_part( 'components/osito', null, array( 'clase' => 'w-20 lg:w-27 h-auto' ) ); ?>
+        </a>
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="font-extrabold text-5xl lg:text-[3.5rem] uppercase tracking-titulo leading-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
           <?php bloginfo( 'name' ); ?>
         </a>

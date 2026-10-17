@@ -407,6 +407,10 @@
     width: calc(var(--spacing) * 10);
     height: calc(var(--spacing) * 10);
   }
+  .size-\[0\.85em\] {
+    width: 0.85em;
+    height: 0.85em;
+  }
   .size-\[1em\] {
     width: 1em;
     height: 1em;
@@ -477,6 +481,10 @@
   .origin-right {
     transform-origin: 100%;
   }
+  .-translate-y-\[0\.05em\] {
+    --tw-translate-y: calc(0.05em * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
   .animate-cinta {
     animation: var(--animate-cinta);
   }
@@ -537,6 +545,9 @@
   .gap-1 {
     gap: var(--spacing);
   }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
   .gap-2\.5 {
     gap: calc(var(--spacing) * 2.5);
   }
@@ -572,6 +583,16 @@
   }
   .gap-x-8 {
     column-gap: calc(var(--spacing) * 8);
+  }
+  :where(.-space-x-0\.5 > :not(:last-child)) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(calc(var(--spacing) * -0.5) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(calc(var(--spacing) * -0.5) * calc(1 - var(--tw-space-x-reverse)));
+  }
+  :where(.-space-x-1 > :not(:last-child)) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(calc(var(--spacing) * -1) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(calc(var(--spacing) * -1) * calc(1 - var(--tw-space-x-reverse)));
   }
   .gap-y-2 {
     row-gap: calc(var(--spacing) * 2);
@@ -1017,6 +1038,18 @@
     user-select: none;
   }
   @media (hover: hover) {
+    .group-hover\:translate-x-0\.5:is(:where(.group):hover *) {
+      --tw-translate-x: calc(var(--spacing) * 0.5);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+    .group-hover\:translate-x-1:is(:where(.group):hover *) {
+      --tw-translate-x: var(--spacing);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+    .group-hover\:-translate-y-0\.5:is(:where(.group):hover *) {
+      --tw-translate-y: calc(var(--spacing) * -0.5);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
     .group-hover\:scale-104:is(:where(.group):hover *) {
       --tw-scale-x: 104%;
       --tw-scale-y: 104%;
@@ -1223,6 +1256,9 @@
     }
     .md\:block {
       display: block;
+    }
+    .md\:flex {
+      display: flex;
     }
     .md\:inline-flex {
       display: inline-flex;
@@ -1742,6 +1778,26 @@
 .formulario-contacto .wpcf7-spinner {
   display: none;
 }
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-x-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -1901,6 +1957,10 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
+      --tw-space-x-reverse: 0;
       --tw-border-style: solid;
       --tw-mask-linear: linear-gradient(#fff, #fff);
       --tw-mask-radial: linear-gradient(#fff, #fff);

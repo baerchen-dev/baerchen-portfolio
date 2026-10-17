@@ -3,7 +3,7 @@
  * TARJETA DE PROYECTO (Figma: Trabajos, nodo 75:514 · sección oscura, nodo 78:606)
  * Usar dentro de un loop de proyectos. Toda la tarjeta es un enlace.
  * PROVISIONAL (hasta diseñar los casos de estudio): si el proyecto tiene "URL de la web", abre esa web
- * en una pestaña nueva (↗ junto al nombre); si no, va al caso de estudio (/trabajos/{slug}/).
+ * en una pestaña nueva (icono ↗ junto al nombre); si no, va al caso de estudio (/trabajos/{slug}/).
  * Imagen 9:8 (tamaño baerchen-tarjeta) · nombre Bold + frase al 60 % · etiquetas en Geist Mono con borde
  * Logo del proyecto encima de la foto, abajo a la izquierda: assets/img/proyectos/{slug}.svg (si existe)
  * Hover: la foto se acerca un 4 % dentro de su marco; el logo se queda quieto.
@@ -51,7 +51,7 @@ $logo_url  = file_exists( get_template_directory() . $logo_ruta ) ? get_template
   <!-- TEXTO -->
   <div class="mt-4 flex flex-col gap-4">
     <p class="text-parrafo">
-      <span class="font-bold <?php echo esc_attr( $c_nombre ); ?>"><?php the_title(); ?><?php if ( $url_web ) : ?> <span aria-hidden="true">↗</span><span class="sr-only"><?php esc_html_e( '(se abre en una pestaña nueva)', 'baerchen' ); ?></span><?php endif; ?></span>
+      <span class="font-bold <?php echo esc_attr( $c_nombre ); ?>"><?php the_title(); ?><?php if ( $url_web ) : ?> <?php get_template_part( 'components/icono', null, array( 'nombre' => 'flecha-diagonal', 'clase' => 'inline-block size-[0.85em] -translate-y-[0.05em]', 'mover' => 'diagonal' ) ); ?><span class="sr-only"><?php esc_html_e( '(se abre en una pestaña nueva)', 'baerchen' ); ?></span><?php endif; ?></span>
       <?php if ( $frase ) : ?><span class="<?php echo esc_attr( $c_frase ); ?>"><?php echo esc_html( $frase ); ?></span><?php endif; ?>
     </p>
 

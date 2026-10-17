@@ -46,8 +46,9 @@ $foto_id    = $campo( 'sobre_foto', 0 );
       <div class="col-span-4 xl:col-start-7 xl:col-span-6 self-center flex flex-col gap-8">
         <p class="text-entradilla"><?php echo esc_html( $entradilla ); ?></p>
         <p class="text-parrafo text-ink/60"><?php echo esc_html( $parrafo ); ?></p>
-        <a href="#como-trabajo" class="self-start font-mono text-base uppercase leading-none cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
-          <?php echo esc_html( $enlace ); ?> <span class="inline-block motion-safe:animate-bounce" aria-hidden="true">↓</span>
+        <a href="#como-trabajo" class="self-start flex items-center gap-2 font-mono text-base uppercase leading-none cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
+          <?php echo esc_html( $enlace ); ?>
+          <?php get_template_part( 'components/icono', null, array( 'nombre' => 'flecha-abajo', 'clase' => 'size-[1em] motion-safe:animate-bounce' ) ); ?>
         </a>
       </div>
 

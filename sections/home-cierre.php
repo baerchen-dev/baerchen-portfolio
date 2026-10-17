@@ -25,7 +25,7 @@ $url_formulario = ( $contacto ? get_permalink( $contacto ) : home_url( '/contact
 $email          = ( $contacto && function_exists( 'get_field' ) ) ? get_field( 'contacto_email', $contacto->ID ) : '';
 $email          = $email ? $email : 'info@baerchen.dev';
 
-$boton = 'flex h-20 xl:h-30 items-center justify-center gap-4 rounded-xl px-6 font-mono text-boton uppercase cursor-pointer transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bg';
+$boton = 'group flex h-20 xl:h-30 items-center justify-center gap-4 rounded-xl px-6 font-mono text-boton uppercase cursor-pointer transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bg';
 ?>
 <section class="relative bg-ink text-bg" data-fondo="oscuro">
   <div class="max-w-7xl mx-auto px-4 md:px-8 pt-24 md:pt-40 pb-24 md:pb-40">
@@ -45,11 +45,11 @@ $boton = 'flex h-20 xl:h-30 items-center justify-center gap-4 rounded-xl px-6 fo
       <div class="col-span-4 md:col-span-8 xl:col-span-12 mt-16 md:mt-22 grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-8">
         <a href="<?php echo esc_url( $url_formulario ); ?>" class="<?php echo esc_attr( $boton ); ?> bg-bg text-ink hover:bg-accent hover:text-bg">
           <?php echo esc_html( $boton_formulario ); ?>
-          <?php get_template_part( 'components/icono', null, array( 'nombre' => 'flecha-derecha', 'clase' => 'size-[1em] shrink-0', 'trazo' => 2 ) ); ?>
+          <?php get_template_part( 'components/icono', null, array( 'nombre' => 'flecha-derecha', 'clase' => 'size-[1em] shrink-0', 'mover' => 'derecha' ) ); ?>
         </a>
         <a href="<?php echo esc_url( 'mailto:' . $email ); ?>" class="<?php echo esc_attr( $boton ); ?> border border-bg/50 hover:border-accent hover:bg-accent">
           <?php echo esc_html( $boton_email ); ?>
-          <?php get_template_part( 'components/icono', null, array( 'nombre' => 'flecha-diagonal', 'clase' => 'size-[1em] shrink-0', 'trazo' => 2 ) ); ?>
+          <?php get_template_part( 'components/icono', null, array( 'nombre' => 'flecha-diagonal', 'clase' => 'size-[1em] shrink-0', 'mover' => 'diagonal' ) ); ?>
         </a>
       </div>
 
@@ -57,9 +57,9 @@ $boton = 'flex h-20 xl:h-30 items-center justify-center gap-4 rounded-xl px-6 fo
       <?php if ( $texto_empleo && $url_linkedin ) : ?>
         <p class="col-span-4 md:col-span-8 xl:col-span-12 mt-12 md:mt-16 flex flex-wrap items-center gap-x-8 gap-y-2 text-base font-medium">
           <span class="uppercase text-bg/60"><?php echo esc_html( $texto_empleo ); ?></span>
-          <a href="<?php echo esc_url( $url_linkedin ); ?>" target="_blank" rel="noopener" class="inline-flex items-center gap-1 underline underline-offset-4 cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bg">
+          <a href="<?php echo esc_url( $url_linkedin ); ?>" target="_blank" rel="noopener" class="group inline-flex items-center gap-1 underline underline-offset-4 cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bg">
             LinkedIn
-            <?php get_template_part( 'components/icono', null, array( 'nombre' => 'flecha-diagonal', 'clase' => 'size-4' ) ); ?>
+            <?php get_template_part( 'components/icono', null, array( 'nombre' => 'flecha-diagonal', 'clase' => 'size-4', 'mover' => 'diagonal' ) ); ?>
             <span class="sr-only"><?php esc_html_e( '(se abre en una pestaña nueva)', 'baerchen' ); ?></span>
           </a>
         </p>
