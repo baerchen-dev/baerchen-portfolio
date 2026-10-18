@@ -109,6 +109,20 @@ function baerchen_enqueue_animaciones() {
 }
 add_action( 'wp_enqueue_scripts', 'baerchen_enqueue_animaciones' );
 
+/* SCRIPTS · CASO DE ESTUDIO (proceso sticky), solo en las páginas de proyecto */
+function baerchen_enqueue_caso() {
+  if ( ! is_singular( 'proyecto' ) ) return;
+  $js = '/assets/js/caso-sticky.js';
+  wp_enqueue_script(
+    'baerchen-caso-sticky',
+    get_template_directory_uri() . $js,
+    array(),
+    filemtime( get_template_directory() . $js ),
+    array( 'in_footer' => true, 'strategy' => 'defer' )
+  );
+}
+add_action( 'wp_enqueue_scripts', 'baerchen_enqueue_caso' );
+
 /* CONTACT FORM 7
  * Sus archivos (CSS y JS) solo se cargan en la página Contacto, y sin los <p> y <br> que añade al formulario
  * (la maquetación la lleva el propio código del formulario: inc/formulario-contacto.html).

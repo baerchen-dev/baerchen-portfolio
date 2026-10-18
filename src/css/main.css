@@ -26,7 +26,7 @@
    * Mezclan rem + vw para que el zoom del navegador siga ampliando el texto (WCAG 1.4.4).
    */
   --text-titulo-pagina: clamp(3rem, 2.119rem + 3.757vw, 5.125rem);      /* Título página · 48 → 82 · hero y cierre */
-  --text-titulo-pagina--line-height: 0.9;
+  --text-titulo-pagina--line-height: 1;
   --text-titulo-pagina--letter-spacing: -0.02em;
   --text-titulo-pagina--font-weight: 700;
   --text-titulo-seccion: clamp(3rem, 2.379rem + 2.652vw, 4.5rem);       /* Título sección · 48 → 72 */
@@ -118,6 +118,42 @@
   [data-crecer][data-abierto] [data-crecer-panel] {
     clip-path: inset(0 0 0 0 round 0);
   }
+}
+
+/* CASO DE ESTUDIO · ENTRADA DEL HERO (sections/proyecto-hero.php), solo sin "reducir movimiento"
+ * .cortina: la foto se descubre de abajo arriba · .entrada: el texto sube desde abajo (.entrada-2: un poco después)
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .cortina { animation: cortina 1.25s cubic-bezier(0.7, 0, 0.15, 1) both; }
+  .entrada { animation: entrada 0.9s cubic-bezier(0.7, 0, 0.15, 1) 0.2s both; }
+  .entrada-2 { animation-delay: 0.45s; }
+}
+@keyframes cortina {
+  from { clip-path: inset(100% 0 0 round 2rem); }
+  to   { clip-path: inset(0 0 0 round 2rem); }
+}
+@keyframes entrada {
+  from { opacity: 0; translate: 0 1.5rem; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+/* CASO DE ESTUDIO · PROCESO STICKY (sections/proyecto-proceso.php + assets/js/caso-sticky.js)
+ * Con data-listo (md+ y JS cargado): capítulos inactivos al 30 % y solo se ve la escena activa, que entra de abajo arriba
+ * con una cortina (deja ver el terracota del escenario). Con "reducir movimiento", el cambio es instantáneo.
+ */
+[data-listo] .proceso-capitulo { transition: opacity 0.5s ease-out; }
+[data-listo] .proceso-capitulo:not([data-activo]) { opacity: 0.3; }
+.proceso-escena { visibility: hidden; }
+.proceso-escena[data-activo] { visibility: visible; }
+@media (prefers-reduced-motion: no-preference) {
+  .proceso-escena[data-activo] { animation: escena 0.9s cubic-bezier(0.7, 0, 0.18, 1) both; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-listo] .proceso-capitulo { transition: none; }
+}
+@keyframes escena {
+  from { opacity: 0.35; translate: 0 7%; clip-path: inset(100% 0 0); }
+  to   { opacity: 1; translate: 0 0; clip-path: inset(0); }
 }
 
 /* Desplazamiento suave hasta las anclas (#trabajos), salvo con "reducir movimiento" */

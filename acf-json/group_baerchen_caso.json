@@ -1,0 +1,379 @@
+{
+    "key": "group_baerchen_caso",
+    "title": "Proyecto · Caso de estudio",
+    "fields": [
+        {
+            "key": "field_caso_tab_hero",
+            "label": "Presentación",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_caso_titular",
+            "label": "Titular",
+            "name": "caso_titular",
+            "type": "textarea",
+            "instructions": "Un salto de línea donde quieras partir el titular. Si se deja vacío, se usa el título del proyecto.",
+            "required": 0,
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_entradilla",
+            "label": "Entradilla",
+            "name": "caso_entradilla",
+            "type": "textarea",
+            "instructions": "Una o dos frases: qué es el proyecto y qué hiciste.",
+            "required": 0,
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_contexto",
+            "label": "Contexto",
+            "name": "caso_contexto",
+            "type": "text",
+            "instructions": "Sale en mono gris junto a \"Ver web en vivo\".",
+            "required": 0,
+            "placeholder": "Proyecto de máster — La Hauss"
+        },
+        {
+            "key": "field_caso_foto",
+            "label": "Foto",
+            "name": "caso_foto",
+            "type": "image",
+            "instructions": "Vertical 2:3 (ideal 976 × 1448). Sin esquinas redondeadas: las pone la web. Si se deja vacía, se usa la imagen destacada.",
+            "required": 0,
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_caso_foto_arriba",
+            "label": "Texto sobre la foto (arriba)",
+            "name": "caso_foto_arriba",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "MQFF / Málaga"
+        },
+        {
+            "key": "field_caso_foto_abajo",
+            "label": "Texto sobre la foto (abajo)",
+            "name": "caso_foto_abajo",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "placeholder": "3 días · 21 películas · una comunidad"
+        },
+        {
+            "key": "field_caso_tab_encargo",
+            "label": "El encargo",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_caso_encargo_titular",
+            "label": "Titular",
+            "name": "caso_encargo_titular",
+            "type": "textarea",
+            "instructions": "Un salto de línea donde quieras partir el titular.",
+            "required": 0,
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_encargo_texto_1",
+            "label": "Texto (columna 1)",
+            "name": "caso_encargo_texto_1",
+            "type": "textarea",
+            "instructions": "El encargo: qué se pedía.",
+            "required": 0,
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_encargo_texto_2",
+            "label": "Texto (columna 2)",
+            "name": "caso_encargo_texto_2",
+            "type": "textarea",
+            "instructions": "Cómo lo planteaste.",
+            "required": 0,
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_ficha",
+            "label": "Ficha",
+            "name": "caso_ficha",
+            "type": "textarea",
+            "instructions": "Un dato por línea: Etiqueta | Valor. Por ejemplo: Contexto | Máster en Diseño UX/UI y Programación Web · La Hauss",
+            "required": 0,
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_tab_cita",
+            "label": "Cita",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_caso_cinta",
+            "label": "Cinta",
+            "name": "caso_cinta",
+            "type": "text",
+            "instructions": "Texto grande y tenue que se desplaza sin fin.",
+            "required": 0,
+            "placeholder": "MQFF — Cine · Comunidad · Visibilidad — Málaga"
+        },
+        {
+            "key": "field_caso_cita",
+            "label": "Cita",
+            "name": "caso_cita",
+            "type": "textarea",
+            "instructions": "Sin comillas: las pone la web, en terracota.",
+            "required": 0,
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_tab_proceso",
+            "label": "Proceso",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_caso_proceso_titular",
+            "label": "Titular",
+            "name": "caso_proceso_titular",
+            "type": "textarea",
+            "instructions": "Un salto de línea donde quieras partir el titular.",
+            "required": 0,
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_capitulos",
+            "label": "Capítulos",
+            "name": "caso_capitulos",
+            "type": "textarea",
+            "instructions": "Un capítulo por línea (máximo 4): Antetítulo | Título | Texto. El antetítulo sale también en el pie de la imagen.",
+            "required": 0,
+            "rows": 6,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_capitulo_1_imagen",
+            "label": "Imagen del capítulo 1",
+            "name": "caso_capitulo_1_imagen",
+            "type": "image",
+            "instructions": "Vertical 4:5 o más alta (ideal 1184 × 1600). Capturas o mockups reales del proyecto.",
+            "required": 0,
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "wrapper": { "width": "25" }
+        },
+        {
+            "key": "field_caso_capitulo_2_imagen",
+            "label": "Imagen del capítulo 2",
+            "name": "caso_capitulo_2_imagen",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "wrapper": { "width": "25" }
+        },
+        {
+            "key": "field_caso_capitulo_3_imagen",
+            "label": "Imagen del capítulo 3",
+            "name": "caso_capitulo_3_imagen",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "wrapper": { "width": "25" }
+        },
+        {
+            "key": "field_caso_capitulo_4_imagen",
+            "label": "Imagen del capítulo 4",
+            "name": "caso_capitulo_4_imagen",
+            "type": "image",
+            "instructions": "Si se deja vacía en el último capítulo, la web muestra un collage con las imágenes anteriores.",
+            "required": 0,
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "wrapper": { "width": "25" }
+        },
+        {
+            "key": "field_caso_tab_sistema",
+            "label": "Sistema",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_caso_sistema_titular",
+            "label": "Titular",
+            "name": "caso_sistema_titular",
+            "type": "textarea",
+            "instructions": "Un salto de línea donde quieras partir el titular.",
+            "required": 0,
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_sistema_texto",
+            "label": "Texto",
+            "name": "caso_sistema_texto",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_sistema_fuentes",
+            "label": "Fuentes",
+            "name": "caso_sistema_fuentes",
+            "type": "textarea",
+            "instructions": "Una por línea (máximo 2): Familia | Peso | Uso | Muestra. La familia, tal cual se llama en Google Fonts (se carga solo en este caso). La primera sale grande; la segunda, pequeña. Ej.: Inter | 800 | Titulares en ExtraBold y mayúsculas, texto en Regular | Málaga Queer Film Festival",
+            "required": 0,
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_sistema_colores",
+            "label": "Colores",
+            "name": "caso_sistema_colores",
+            "type": "textarea",
+            "instructions": "Uno por línea (máximo 3): Nombre | #hex. El último es el acento: la web calcula su contraste sobre los demás.",
+            "required": 0,
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_sistema_principio",
+            "label": "Principio",
+            "name": "caso_sistema_principio",
+            "type": "text",
+            "instructions": "",
+            "required": 0
+        },
+        {
+            "key": "field_caso_tab_entrega",
+            "label": "Entrega",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_caso_entrega_titular",
+            "label": "Titular sobre la imagen",
+            "name": "caso_entrega_titular",
+            "type": "textarea",
+            "instructions": "Un salto de línea donde quieras partir el titular.",
+            "required": 0,
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_entrega_imagen",
+            "label": "Imagen a pantalla completa",
+            "name": "caso_entrega_imagen",
+            "type": "image",
+            "instructions": "Horizontal 16:9 (ideal 2432 × 1368): mockup o captura grande. Se recorta en vertical en móvil: lo importante, en el centro.",
+            "required": 0,
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_caso_alcance_titular",
+            "label": "Alcance · Titular",
+            "name": "caso_alcance_titular",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_alcance_cifras",
+            "label": "Alcance · Cifras",
+            "name": "caso_alcance_cifras",
+            "type": "textarea",
+            "instructions": "Una por línea (máximo 3): Valor | Texto. Solo cifras reales. Ej.: 21 | películas con su ficha y sus sesiones reales",
+            "required": 0,
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_alcance_texto",
+            "label": "Alcance · Texto",
+            "name": "caso_alcance_texto",
+            "type": "textarea",
+            "instructions": "Qué incluye la entrega.",
+            "required": 0,
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_caso_aprendizajes",
+            "label": "Qué haría distinto hoy",
+            "name": "caso_aprendizajes",
+            "type": "textarea",
+            "instructions": "Uno por línea: Título | Texto.",
+            "required": 0,
+            "rows": 4,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "proyecto"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Textos e imágenes del caso de estudio (single-proyecto.php).",
+    "show_in_rest": 0,
+    "modified": 1792354800
+}

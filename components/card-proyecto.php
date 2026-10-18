@@ -2,8 +2,8 @@
 /**
  * TARJETA DE PROYECTO (Figma: Trabajos, nodo 75:514 · sección oscura, nodo 78:606)
  * Usar dentro de un loop de proyectos. Toda la tarjeta es un enlace.
- * PROVISIONAL (hasta diseñar los casos de estudio): si el proyecto tiene "URL de la web", abre esa web
- * en una pestaña nueva (icono ↗ junto al nombre); si no, va al caso de estudio (/trabajos/{slug}/).
+ * Destino: el caso de estudio (/trabajos/{slug}/) si el proyecto ya lo tiene (entradilla del caso rellena);
+ * si no, y tiene "URL de la web", abre esa web en una pestaña nueva (icono ↗ junto al nombre).
  * Imagen 9:8 (tamaño baerchen-tarjeta) · nombre Bold + frase al 60 % · etiquetas en Geist Mono con borde
  * Logo del proyecto encima de la foto, abajo a la izquierda: assets/img/proyectos/{slug}.svg (si existe)
  * Hover: la foto se acerca un 4 % dentro de su marco; el logo se queda quieto.
@@ -16,7 +16,7 @@ $estado    = function_exists( 'get_field' ) ? get_field( 'proyecto_estado' ) : '
 $etiquetas = get_the_terms( get_the_ID(), 'etiqueta_proyecto' );
 $sizes     = $args['sizes'] ?? '(min-width: 1280px) 592px, (min-width: 768px) 50vw, 100vw';
 $oscuro    = ( $args['tema'] ?? 'claro' ) === 'oscuro';
-$url_web   = function_exists( 'get_field' ) ? get_field( 'proyecto_url' ) : '';
+$url_web   = baerchen_proyecto_tiene_caso() ? '' : ( function_exists( 'get_field' ) ? get_field( 'proyecto_url' ) : '' );
 $destino   = $url_web ? $url_web : get_permalink();
 
 // Colores según el fondo (contraste AA comprobado: ink/60 sobre crema 4,7:1 · bg/60 sobre ink 6,7:1)
