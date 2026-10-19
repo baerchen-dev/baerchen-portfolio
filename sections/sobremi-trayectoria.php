@@ -30,7 +30,9 @@ $etapas   = baerchen_lista( $campo( 'sobre_trayectoria_lista', __( "2025 — Hoy
           echo wp_get_attachment_image( $foto_id, 'baerchen-retrato', false, array(
             'class' => 'w-full aspect-2/3 xl:max-h-[calc(100svh-9rem)] object-cover rounded-4xl',
             'sizes' => '(min-width: 1280px) 384px, (min-width: 768px) 50vw, 100vw',
-            'alt'   => $alt ? $alt : __( 'Poste de señales de senderismo en la montaña nevada', 'baerchen' ),
+            'alt'      => $alt ? $alt : __( 'Poste de señales de senderismo en la montaña nevada', 'baerchen' ),
+            'loading'  => 'lazy',
+            'decoding' => 'async',
           ) );
         else : ?>
           <div class="w-full aspect-2/3 rounded-4xl bg-ink/10" aria-hidden="true"></div>

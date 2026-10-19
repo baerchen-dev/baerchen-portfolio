@@ -25,6 +25,9 @@ function baerchen_tamanos_imagen() {
   add_image_size( 'baerchen-vertical', 976, 1308, true );  // foto de Sobre mí en la Home · 3:4 (Figma 488 × 654)
   add_image_size( 'baerchen-presentacion', 976, 1220, true ); // foto del hero de la página Sobre mí · 4:5 (Figma 488 × 610)
   add_image_size( 'baerchen-ancho', 2432, 0, false );      // imágenes grandes del caso de estudio (hasta 1216px)
+  // Mitades (misma proporción): WordPress las añade al srcset y el móvil descarga la pequeña cuando le basta
+  add_image_size( 'baerchen-retrato-mitad', 488, 724, true );
+  add_image_size( 'baerchen-presentacion-mitad', 488, 610, true );
 }
 add_action( 'after_setup_theme', 'baerchen_tamanos_imagen' );
 
@@ -52,18 +55,12 @@ function baerchen_enqueue_styles() {
   wp_dequeue_style( 'classic-theme-styles' );
   wp_dequeue_style( 'global-styles' );
 
-  wp_enqueue_style(
-    'baerchen-fonts',
-    'https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..700&family=Plus+Jakarta+Sans:wght@400..800&display=swap',
-    array(),
-    null
-  );
-
+  // Fuentes: alojadas en el tema (assets/fonts/), declaradas con @font-face al principio de src/css/main.css
   $css = '/assets/css/main.css';
   wp_enqueue_style(
     'baerchen-main',
     get_template_directory_uri() . $css,
-    array( 'baerchen-fonts' ),
+    array(),
     filemtime( get_template_directory() . $css )
   );
 
@@ -187,12 +184,28 @@ function baerchen_favicon() {
 }
 add_action( 'wp_head', 'baerchen_favicon' );
 
-/* PRECONNECT A GOOGLE FONTS */
-function baerchen_resource_hints( $urls, $relation_type ) {
-  if ( 'preconnect' === $relation_type ) {
-    $urls[] = 'https://fonts.googleapis.com';
-    $urls[] = array( 'href' => 'https://fonts.gstatic.com', 'crossorigin' );
+/* META DESCRIPCIÓN (el texto gris que enseña Google bajo el título)
+ * Campo "Descripción para Google" (acf-json/group_baerchen_seo.json) en cada página y proyecto.
+ * Si está vacío: proyecto → entradilla del caso o frase de la tarjeta · Home → párrafo del hero ·
+ * Sobre mí → entradilla · resto → texto general. Se corta a 160 caracteres sin partir palabras.
+ */
+function baerchen_meta_descripcion() {
+  $texto = '';
+  if ( function_exists( 'get_field' ) && is_singular() ) {
+    $texto = get_field( 'seo_descripcion' );
+    if ( ! $texto && is_singular( 'proyecto' ) ) $texto = get_field( 'caso_entradilla' ) ?: get_field( 'proyecto_frase' );
+    if ( ! $texto && is_front_page() )           $texto = get_field( 'hero_parrafo' );
+    if ( ! $texto && is_page( 'sobre-mi' ) )     $texto = get_field( 'sobre_entradilla' );
   }
-  return $urls;
+  if ( ! $texto ) $texto = __( 'Portfolio de Francisco Estévez, diseñador UX/UI y desarrollador web: webs claras, rápidas y a medida, del diseño en Figma al desarrollo en WordPress.', 'baerchen' );
+  $texto = trim( preg_replace( '/\s+/', ' ', wp_strip_all_tags( $texto ) ) );
+  if ( mb_strlen( $texto ) > 160 ) $texto = rtrim( mb_substr( $texto, 0, mb_strrpos( mb_substr( $texto, 0, 157 ), ' ' ) ), ' ,.;:' ) . '…';
+  echo '<meta name="description" content="' . esc_attr( $texto ) . '">' . "\n";
 }
-add_filter( 'wp_resource_hints', 'baerchen_resource_hints', 10, 2 );
+add_action( 'wp_head', 'baerchen_meta_descripcion', 1 );
+
+/* PRECARGA DE LA FUENTE PRINCIPAL · el navegador la pide a la vez que el CSS, sin esperar a leerlo (titulares del hero) */
+function baerchen_precargar_fuente() {
+  echo '<link rel="preload" href="' . esc_url( get_template_directory_uri() . '/assets/fonts/plus-jakarta-sans-latin.woff2' ) . '" as="font" type="font/woff2" crossorigin>' . "\n";
+}
+add_action( 'wp_head', 'baerchen_precargar_fuente', 2 );

@@ -1,0 +1,43 @@
+{
+    "key": "group_baerchen_seo",
+    "title": "Google",
+    "fields": [
+        {
+            "key": "field_seo_descripcion",
+            "label": "Descripción para Google",
+            "name": "seo_descripcion",
+            "type": "textarea",
+            "instructions": "El texto gris bajo el título en los resultados de Google. Entre 120 y 160 caracteres. Si se deja vacío, se usa la entradilla (proyectos y Sobre mí), el párrafo del hero (Inicio) o un texto general.",
+            "required": 0,
+            "maxlength": 160,
+            "rows": 3,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "proyecto"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Meta descripción de cada página y proyecto (functions.php · baerchen_meta_descripcion).",
+    "show_in_rest": 0,
+    "modified": 1792420000
+}

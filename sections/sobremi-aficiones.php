@@ -39,7 +39,9 @@ foreach ( $defecto as $n => $def ) {
             echo wp_get_attachment_image( $aficion['foto'], 'baerchen-retrato', false, array(
               'class' => 'w-full aspect-2/3 object-cover rounded-4xl',
               'sizes' => '(min-width: 1280px) 384px, (min-width: 768px) 50vw, 100vw',
-              'alt'   => '',   // decorativa: el título y el texto ya cuentan qué es
+              'alt'      => '',   // decorativa: el título y el texto ya cuentan qué es
+              'loading'  => 'lazy',
+              'decoding' => 'async',
             ) );
           else : ?>
             <div class="w-full aspect-2/3 rounded-4xl bg-bg/10" aria-hidden="true"></div>

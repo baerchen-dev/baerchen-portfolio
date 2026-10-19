@@ -61,7 +61,7 @@ $tarjetas = array( 'left-[7%] top-[11%] -rotate-4', 'left-[39%] top-[35%] rotate
 
       <!-- ESCENARIO FIJO · columnas 7–12 (tablet 5–8) · solo md+ con JS -->
       <div class="hidden md:group-data-listo/proceso:block md:col-start-5 md:col-span-4 xl:col-start-7 xl:col-span-6" aria-hidden="true">
-        <div class="sticky top-22 h-[calc(100svh-7rem)] overflow-hidden rounded-4xl bg-accent text-bg">
+        <div class="proceso-escenario sticky top-24 h-[calc(100svh-7.5rem)] overflow-hidden rounded-4xl bg-accent text-bg">
           <?php foreach ( $capitulos as $i => list( $antetitulo ) ) : ?>
             <div class="proceso-escena absolute inset-0" data-escena="<?php echo (int) $i; ?>">
 

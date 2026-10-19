@@ -94,13 +94,21 @@ function baerchen_contraste( $a, $b ) {
   return ( max( $la, $lb ) + 0.05 ) / ( min( $la, $lb ) + 0.05 );
 }
 
-/* FUENTES DEL PROYECTO (Google Fonts) · solo en su caso de estudio, para que la muestra del sistema sea real.
- * Lee el campo "Fuentes" (Familia | Peso | Uso | Muestra) y carga cada familia en 400 y en el peso indicado.
+/* FUENTES DEL PROYECTO · solo en su caso de estudio, para que la muestra del sistema sea real.
+ * Lee el campo "Fuentes" (Familia | Peso | Uso | Muestra). Si la familia está alojada en el tema
+ * (assets/fonts/{familia-en-minúsculas-con-guiones}.css, p. ej. inter.css), usa esa; si no, la pide a Google Fonts
+ * en 400 y en el peso indicado. Para alojar una nueva: sus .woff2 (latin y latin-ext) + su .css en assets/fonts/.
  */
 function baerchen_fuentes_caso() {
   if ( ! is_singular( 'proyecto' ) || ! function_exists( 'get_field' ) ) return;
   $familias = array();
   foreach ( baerchen_lista( get_field( 'caso_sistema_fuentes' ), 4 ) as list( $familia, $peso ) ) {
+    $slug    = sanitize_title( $familia );
+    $archivo = '/assets/fonts/' . $slug . '.css';
+    if ( file_exists( get_template_directory() . $archivo ) ) {
+      wp_enqueue_style( 'baerchen-fuente-' . $slug, get_template_directory_uri() . $archivo, array(), filemtime( get_template_directory() . $archivo ) );
+      continue;
+    }
     $pesos = array_unique( array_filter( array( 400, (int) $peso ) ) );
     sort( $pesos );
     $familias[] = 'family=' . str_replace( ' ', '+', trim( $familia ) ) . ':wght@' . implode( ';', $pesos );

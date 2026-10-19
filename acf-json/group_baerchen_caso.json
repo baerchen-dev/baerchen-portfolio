@@ -262,7 +262,7 @@
             "label": "Fuentes",
             "name": "caso_sistema_fuentes",
             "type": "textarea",
-            "instructions": "Una por línea (máximo 2): Familia | Peso | Uso | Muestra. La familia, tal cual se llama en Google Fonts (se carga solo en este caso). La primera sale grande; la segunda, pequeña. Ej.: Inter | 800 | Titulares en ExtraBold y mayúsculas, texto en Regular | Málaga Queer Film Festival",
+            "instructions": "Una por línea (máximo 2): Familia | Peso | Uso | Muestra. La familia, tal cual se llama en Google Fonts. Se carga solo en este caso: desde el tema si está en assets/fonts/ (Inter y JetBrains Mono ya lo están) y, si no, desde Google Fonts. La primera sale grande; la segunda, pequeña. Ej.: Inter | 800 | Titulares en ExtraBold y mayúsculas, texto en Regular | Málaga Queer Film Festival",
             "required": 0,
             "rows": 2,
             "new_lines": ""
@@ -375,5 +375,5 @@
     "active": true,
     "description": "Textos e imágenes del caso de estudio (single-proyecto.php).",
     "show_in_rest": 0,
-    "modified": 1792354800
+    "modified": 1792422000
 }
