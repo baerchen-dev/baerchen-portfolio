@@ -3,14 +3,14 @@
  * CASO DE ESTUDIO · PRESENTACIÓN (Figma: bloque "01 — Hero" del caso de estudio)
  * Etiqueta "Caso de estudio — 01" + titular (h1, ola de color al cargar) en las columnas 1–7, foto 2:3 en las 8–12
  * y, abajo a la izquierda (alineados con el pie de la foto), entradilla + contexto + "Ver web en vivo ↗".
- * Tablet: etiqueta y titular a todo el ancho; debajo, foto (1–4) y texto (5–8). Móvil: todo apilado.
+ * Tablet: foto en las columnas 1–4 y, a su derecha (5–8), etiqueta y titular arriba y entradilla abajo. Móvil: todo apilado.
  * Movimiento (src/css/main.css): la foto entra con una cortina y los textos suben; nada con "reducir movimiento".
  */
 $campo = function ( $nombre ) {
   return function_exists( 'get_field' ) ? get_field( $nombre ) : '';
 };
 
-$titular    = $campo( 'caso_titular' ) ?: get_the_title();
+$titular    = trim( (string) $campo( 'caso_titular' ) ) ?: get_the_title();   // trim: un campo con solo un salto de línea cuenta como vacío
 $entradilla = $campo( 'caso_entradilla' );
 $contexto   = $campo( 'caso_contexto' );
 $url_web    = $campo( 'proyecto_url' );
@@ -23,7 +23,7 @@ $numero     = baerchen_proyecto_numero();
   <div class="max-w-7xl mx-auto px-4 md:px-8 pt-12 md:pt-16 pb-24 md:pb-32 grid grid-cols-4 gap-x-4 gap-y-10 md:grid-cols-8 md:gap-x-6 xl:grid-cols-12 xl:gap-x-8">
 
     <!-- ETIQUETA + TITULAR · columnas 1–7 -->
-    <div class="col-span-4 md:col-span-8 xl:col-span-7 xl:row-start-1 flex flex-col gap-8">
+    <div class="col-span-4 md:col-start-5 md:row-start-1 xl:col-start-1 xl:col-span-7 xl:row-start-1 flex flex-col gap-8">
       <p class="entrada font-mono text-base md:text-lg uppercase leading-none">
         <?php echo esc_html( sprintf( __( 'Caso de estudio — %s', 'baerchen' ), $numero ) ); ?>
       </p>
@@ -31,7 +31,7 @@ $numero     = baerchen_proyecto_numero();
     </div>
 
     <!-- FOTO · columnas 8–12 (2:3), con dos líneas de datos encima -->
-    <div class="group cortina relative col-span-4 md:row-start-2 xl:col-start-8 xl:col-span-5 xl:row-start-1 xl:row-span-2 overflow-hidden rounded-4xl">
+    <div class="group cortina relative col-span-4 md:col-start-1 md:row-start-1 md:row-span-2 xl:col-start-8 xl:col-span-5 xl:row-start-1 xl:row-span-2 self-start overflow-hidden rounded-4xl">
       <?php if ( $foto_id ) :
         echo wp_get_attachment_image( $foto_id, 'baerchen-retrato', false, array(
           'class'         => 'w-full aspect-2/3 object-cover transition-transform duration-700 ease-out group-hover:scale-104 motion-reduce:transition-none',
@@ -45,7 +45,7 @@ $numero     = baerchen_proyecto_numero();
 
       <?php if ( $foto_arr || $foto_abj ) : ?>
         <!-- Degradados para que el texto crema se lea sobre cualquier foto -->
-        <div class="absolute inset-0 bg-linear-to-b from-ink/50 via-transparent to-ink/50 pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute inset-0 bg-linear-to-b from-ink/30 via-transparent to-ink/30 pointer-events-none" aria-hidden="true"></div>
         <?php if ( $foto_arr ) : ?>
           <p class="absolute left-6 top-6 md:left-8 md:top-8 font-mono font-medium text-sm uppercase leading-[1.4] text-bg"><?php echo esc_html( $foto_arr ); ?></p>
         <?php endif; ?>

@@ -44,7 +44,7 @@ $tarjetas = array( 'left-[7%] top-[11%] -rotate-4', 'left-[39%] top-[35%] rotate
       <!-- CAPÍTULOS · columnas 1–5 (tablet 1–4) -->
       <ol class="col-span-4 xl:col-span-5 flex flex-col gap-20 md:gap-0">
         <?php foreach ( $capitulos as $i => list( $antetitulo, $titulo, $texto ) ) : ?>
-          <li class="proceso-capitulo flex flex-col justify-center gap-4 md:group-data-listo/proceso:min-h-[90svh]" data-capitulo="<?php echo (int) $i; ?>">
+          <li class="proceso-capitulo flex flex-col justify-center gap-4 md:group-data-listo/proceso:min-h-[min(90svh,48rem)]" data-capitulo="<?php echo (int) $i; ?>">
             <p class="font-mono font-medium text-sm uppercase leading-[1.4] text-ink/60"><?php echo esc_html( $num( $i ) . ' — ' . $antetitulo ); ?></p>
             <h3 class="font-bold text-2xl md:text-[2rem] leading-none"><?php echo esc_html( $titulo ); ?></h3>
             <p class="text-parrafo text-ink/60"><?php echo esc_html( $texto ); ?></p>
@@ -61,7 +61,7 @@ $tarjetas = array( 'left-[7%] top-[11%] -rotate-4', 'left-[39%] top-[35%] rotate
 
       <!-- ESCENARIO FIJO · columnas 7–12 (tablet 5–8) · solo md+ con JS -->
       <div class="hidden md:group-data-listo/proceso:block md:col-start-5 md:col-span-4 xl:col-start-7 xl:col-span-6" aria-hidden="true">
-        <div class="proceso-escenario sticky top-24 h-[calc(100svh-7.5rem)] overflow-hidden rounded-4xl bg-accent text-bg">
+        <div class="proceso-escenario sticky top-24 w-full aspect-[592/860] max-h-[calc(100svh-7.5rem)] overflow-hidden rounded-4xl bg-accent text-bg">
           <?php foreach ( $capitulos as $i => list( $antetitulo ) ) : ?>
             <div class="proceso-escena absolute inset-0" data-escena="<?php echo (int) $i; ?>">
 

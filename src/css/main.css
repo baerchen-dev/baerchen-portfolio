@@ -132,26 +132,26 @@
 }
 
 /* Escenario del proceso (sections/proyecto-proceso.php): top-24 = justo donde acaba el cristal del header (72 px + 24 de degradado).
+ * Proporción de las imágenes (592 × 860) con el alto de la pantalla como máximo: en tablet vertical no se estira (recortaba los lados).
  * Con la barra de WordPress, el header baja; el escenario baja lo mismo para no quedar desenfocado.
  */
 @media (min-width: 601px) {
-  .admin-bar .proceso-escenario { top: calc(6rem + 46px); height: calc(100svh - 7.5rem - 46px); }
+  .admin-bar .proceso-escenario { top: calc(6rem + 46px); max-height: calc(100svh - 7.5rem - 46px); }
 }
 @media (min-width: 783px) {
-  .admin-bar .proceso-escenario { top: calc(6rem + 32px); height: calc(100svh - 7.5rem - 32px); }
+  .admin-bar .proceso-escenario { top: calc(6rem + 32px); max-height: calc(100svh - 7.5rem - 32px); }
 }
 
 /* OLA DE COLOR · cada letra (span con --i = su posición) pasa de su color → accent → su color, 50 ms después de la anterior
- * Al cargar: además aparece desde el 15 % de opacidad. Se genera con baerchen_ola() (functions.php).
+ * Solo cambia el color: las letras están visibles desde el principio. Antes empezaban al 15 % de opacidad y, en un
+ * título largo, el h1 tardaba ~2,5 s en verse entero (retrasaba el LCP). Se genera con baerchen_ola() (functions.php).
  */
 .ola-activa > span {
   animation: ola 0.45s ease-in-out both;
   animation-delay: calc(var(--i) * 50ms + 300ms);
 }
 @keyframes ola {
-  0%   { opacity: 0.15; }
-  50%  { opacity: 1; color: var(--color-accent); }
-  100% { opacity: 1; }
+  50% { color: var(--color-accent); }
 }
 @media (prefers-reduced-motion: reduce) {
   .ola-activa > span { animation: none; }
