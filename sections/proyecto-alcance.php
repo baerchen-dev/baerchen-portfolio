@@ -30,7 +30,7 @@ $nota = 'font-mono font-medium text-sm uppercase leading-[1.4]';
         <?php foreach ( $cifras as list( $valor, $descripcion ) ) : ?>
           <div class="col-span-4 md:col-span-8 xl:col-span-4 flex flex-col-reverse justify-end gap-4 pt-6 border-t border-ink/18">
             <dt class="text-parrafo text-ink/60"><?php echo esc_html( $descripcion ); ?></dt>
-            <dd class="text-titulo-seccion"><?php echo esc_html( $valor ); ?></dd>
+            <dd class="text-cifra"><?php echo esc_html( $valor ); ?></dd>
           </div>
         <?php endforeach; ?>
       </dl>

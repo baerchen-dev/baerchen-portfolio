@@ -9,6 +9,7 @@
  * imagen de cada capítulo y aparece el escenario fijo (columnas 7–12); el capítulo más cercano al centro de la pantalla
  * lleva data-activo y su escena también. CSS (src/css/main.css): capítulos inactivos al 30 % y la escena activa entra
  * con una cortina. Móvil, sin JS o antes de que cargue: capítulos apilados, cada uno con su imagen; no se oculta nada.
+ * Rótulos del escenario en etiqueta crema (como las del collage): se leen sobre cualquier imagen, clara u oscura.
  * El escenario repite las imágenes: va oculto para lectores de pantalla (las imágenes con texto alternativo son las de
  * cada capítulo).
  */
@@ -52,7 +53,7 @@ $tarjetas = array( 'left-[7%] top-[11%] -rotate-4', 'left-[39%] top-[35%] rotate
             <!-- Imagen del capítulo (móvil, sin JS): se oculta cuando el escenario fijo toma el relevo -->
             <?php if ( $imagenes[ $i ] ) : ?>
               <figure class="mt-4 md:group-data-listo/proceso:hidden">
-                <?php echo wp_get_attachment_image( $imagenes[ $i ], 'baerchen-ancho', false, array( 'class' => 'w-full aspect-4/5 object-cover rounded-4xl', 'sizes' => $sizes ) ); ?>
+                <?php echo wp_get_attachment_image( $imagenes[ $i ], 'baerchen-ancho', false, array( 'class' => 'w-full aspect-[592/860] object-cover rounded-4xl', 'sizes' => $sizes ) ); ?>
               </figure>
             <?php endif; ?>
           </li>
@@ -61,7 +62,7 @@ $tarjetas = array( 'left-[7%] top-[11%] -rotate-4', 'left-[39%] top-[35%] rotate
 
       <!-- ESCENARIO FIJO · columnas 7–12 (tablet 5–8) · solo md+ con JS -->
       <div class="hidden md:group-data-listo/proceso:block md:col-start-5 md:col-span-4 xl:col-start-7 xl:col-span-6" aria-hidden="true">
-        <div class="proceso-escenario sticky top-24 w-full aspect-[592/860] max-h-[calc(100svh-7.5rem)] overflow-hidden rounded-4xl bg-accent text-bg">
+        <div class="proceso-escenario sticky top-24 ml-auto w-full aspect-[592/860] overflow-hidden rounded-4xl bg-accent text-bg">
           <?php foreach ( $capitulos as $i => list( $antetitulo ) ) : ?>
             <div class="proceso-escena absolute inset-0" data-escena="<?php echo (int) $i; ?>">
 
@@ -76,8 +77,8 @@ $tarjetas = array( 'left-[7%] top-[11%] -rotate-4', 'left-[39%] top-[35%] rotate
                 <?php echo wp_get_attachment_image( $imagenes[ $i ], 'baerchen-ancho', false, array( 'class' => 'size-full object-cover', 'sizes' => $sizes, 'alt' => '' ) ); ?>
               <?php endif; ?>
 
-              <p class="absolute right-6 top-6 md:right-8 md:top-8 font-mono font-medium text-sm uppercase leading-[1.4]"><?php echo esc_html( $num( $i ) . ' — ' . sprintf( '%02d', $total ) ); ?></p>
-              <p class="absolute left-6 bottom-6 md:left-8 md:bottom-8 font-mono font-medium text-sm uppercase leading-[1.4]"><?php echo esc_html( $num( $i ) . ' / ' . $antetitulo ); ?></p>
+              <p class="absolute right-6 top-6 md:right-8 md:top-8 rounded bg-bg px-2 py-1 font-mono font-medium text-sm uppercase leading-[1.4] text-ink"><?php echo esc_html( $num( $i ) . ' — ' . sprintf( '%02d', $total ) ); ?></p>
+              <p class="absolute left-6 bottom-6 md:left-8 md:bottom-8 rounded bg-bg px-2 py-1 font-mono font-medium text-sm uppercase leading-[1.4] text-ink"><?php echo esc_html( $num( $i ) . ' / ' . $antetitulo ); ?></p>
             </div>
           <?php endforeach; ?>
         </div>

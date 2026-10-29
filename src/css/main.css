@@ -86,6 +86,10 @@
   --text-email: clamp(2rem, 1.586rem + 1.768vw, 3rem);                  /* Email · 32 → 48 · email grande de Contacto */
   --text-email--line-height: 1;
   --text-email--font-weight: 500;
+  --text-cifra: clamp(2rem, 1.586rem + 1.768vw, 3rem);                  /* Cifra · 32 → 48 · cifras del Alcance (caso de estudio) */
+  --text-cifra--line-height: 1;
+  --text-cifra--letter-spacing: -0.02em;
+  --text-cifra--font-weight: 700;
   --text-cinta: clamp(3rem, 1.757rem + 5.304vw, 6rem);                  /* Cinta · 48 → 96 · marquesina de Contacto */
   --text-cinta--line-height: 1.2;   /* no 1: el overflow-hidden cortaría las tildes de las mayúsculas (Ñ, Í) */
   --text-cinta--font-weight: 800;
@@ -107,6 +111,14 @@
 /* EXCEPCIONES
  * Solo lo que no se pueda resolver con clases de Tailwind
  */
+
+/* Sin palabras huérfanas: el navegador reparte las líneas para que la última no quede con una sola palabra
+ * (pretty) y los titulares queden equilibrados (balance). Donde no se admite, no cambia nada.
+ */
+@layer base {
+  p, li, dt, dd, figcaption, blockquote { text-wrap: pretty; }
+  h1, h2, h3, h4 { text-wrap: balance; }
+}
 
 /* Datos para --text-logo
  * --logo-letras: número de letras del título del sitio (functions.php lo sobrescribe)
@@ -132,14 +144,20 @@
 }
 
 /* Escenario del proceso (sections/proyecto-proceso.php): top-24 = justo donde acaba el cristal del header (72 px + 24 de degradado).
- * Proporción de las imágenes (592 × 860) con el alto de la pantalla como máximo: en tablet vertical no se estira (recortaba los lados).
+ * Siempre con la proporción de las imágenes (592 × 860) y el alto de la pantalla como máximo: en pantallas bajas se estrecha
+ * en lugar de recortar la imagen arriba y abajo; en tablet vertical no se estira (recortaba los lados).
  * Con la barra de WordPress, el header baja; el escenario baja lo mismo para no quedar desenfocado.
  */
+.proceso-escenario {
+  --escenario-alto: calc(100svh - 7.5rem);
+  max-height: var(--escenario-alto);
+  max-width: calc(var(--escenario-alto) * 592 / 860);
+}
 @media (min-width: 601px) {
-  .admin-bar .proceso-escenario { top: calc(6rem + 46px); max-height: calc(100svh - 7.5rem - 46px); }
+  .admin-bar .proceso-escenario { top: calc(6rem + 46px); --escenario-alto: calc(100svh - 7.5rem - 46px); }
 }
 @media (min-width: 783px) {
-  .admin-bar .proceso-escenario { top: calc(6rem + 32px); max-height: calc(100svh - 7.5rem - 32px); }
+  .admin-bar .proceso-escenario { top: calc(6rem + 32px); --escenario-alto: calc(100svh - 7.5rem - 32px); }
 }
 
 /* OLA DE COLOR · cada letra (span con --i = su posición) pasa de su color → accent → su color, 50 ms después de la anterior
