@@ -47,7 +47,7 @@ $boton = 'group flex h-20 xl:h-30 items-center justify-center gap-4 rounded-xl p
           <?php echo esc_html( $boton_formulario ); ?>
           <?php get_template_part( 'components/icono', null, array( 'nombre' => 'flecha-derecha', 'clase' => 'size-[1em] shrink-0', 'mover' => 'derecha' ) ); ?>
         </a>
-        <a href="<?php echo esc_url( 'mailto:' . $email ); ?>" class="<?php echo esc_attr( $boton ); ?> border border-bg/50 hover:border-accent hover:bg-accent">
+        <a href="mailto:<?php echo antispambot( sanitize_email( $email ) ); ?>" class="<?php echo esc_attr( $boton ); ?> border border-bg/50 hover:border-accent hover:bg-accent">
           <?php echo esc_html( $boton_email ); ?>
           <?php get_template_part( 'components/icono', null, array( 'nombre' => 'flecha-diagonal', 'clase' => 'size-[1em] shrink-0', 'mover' => 'diagonal' ) ); ?>
         </a>

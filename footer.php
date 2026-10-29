@@ -24,8 +24,8 @@
         <!-- CONTACTO -->
         <div class="flex flex-col gap-6">
           <p class="font-mono font-bold text-lg uppercase tracking-wider leading-none text-bg/60"><?php esc_html_e( 'Contacto', 'baerchen' ); ?></p>
-          <a href="<?php echo esc_url( 'mailto:' . $email ); ?>" class="self-start font-bold text-2xl md:text-[2rem] leading-none cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
-            <?php echo esc_html( $email ); ?>
+          <a href="mailto:<?php echo antispambot( sanitize_email( $email ) ); ?>" class="self-start font-bold text-2xl md:text-[2rem] leading-none cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
+            <?php echo antispambot( sanitize_email( $email ) ); ?>
           </a>
         </div>
 

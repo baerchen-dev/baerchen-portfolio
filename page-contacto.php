@@ -41,7 +41,7 @@ $servicios_defecto = array(
 
         <div class="flex flex-col gap-6">
           <p class="font-mono text-base md:text-lg uppercase leading-none"><?php echo esc_html( $etiqueta_email ); ?></p>
-          <a href="<?php echo esc_url( 'mailto:' . $email ); ?>" class="self-start text-email break-all cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"><?php echo esc_html( $email ); ?></a>
+          <a href="mailto:<?php echo antispambot( sanitize_email( $email ) ); ?>" class="self-start text-email break-all cursor-pointer hover:opacity-60 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"><?php echo antispambot( sanitize_email( $email ) ); ?></a>
           <?php if ( $respuesta ) : ?><p class="font-mono font-medium text-sm uppercase leading-[1.4] text-ink/60"><?php echo esc_html( $respuesta ); ?></p><?php endif; ?>
         </div>
       </div>
