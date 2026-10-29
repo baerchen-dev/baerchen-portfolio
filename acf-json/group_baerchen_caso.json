@@ -317,6 +317,22 @@
             "library": "all"
         },
         {
+            "key": "field_caso_entrega_titular_posicion",
+            "label": "Posición del titular",
+            "name": "caso_entrega_titular_posicion",
+            "type": "button_group",
+            "instructions": "Sobre la imagen: para fotos con zonas tranquilas (MQFF). Encima: para capturas con mucho texto (PASO); la imagen se ve entera, sin recorte ni degradado.",
+            "required": 0,
+            "choices": {
+                "sobre": "Sobre la imagen",
+                "encima": "Encima de la imagen"
+            },
+            "default_value": "sobre",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
             "key": "field_caso_alcance_titular",
             "label": "Alcance · Titular",
             "name": "caso_alcance_titular",
@@ -375,5 +391,5 @@
     "active": true,
     "description": "Textos e imágenes del caso de estudio (single-proyecto.php).",
     "show_in_rest": 0,
-    "modified": 1792422000
+    "modified": 1793307240
 }
