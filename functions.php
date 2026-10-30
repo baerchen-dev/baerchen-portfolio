@@ -128,6 +128,13 @@ add_filter( 'wpcf7_load_js',  fn() => is_page( 'contacto' ) );
 add_filter( 'wpcf7_load_css', fn() => is_page( 'contacto' ) );
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
+/* CF7 encola Turnstile en todas las páginas y los filtros de arriba no le afectan. */
+add_action( 'wp_enqueue_scripts', function () {
+  if ( ! is_page( 'contacto' ) ) {
+    wp_dequeue_script( 'cloudflare-turnstile' );
+  }
+}, 20 );
+
 /* TEXTO · OLA DE COLOR (inspirada en wearedirect.co)
  * Parte el texto en letras para que una ola de color accent lo recorra al cargar y al pasar el ratón.
  * Uso: <h1><?php echo baerchen_ola( $titular ); ?></h1>  (ya escapa el texto)
