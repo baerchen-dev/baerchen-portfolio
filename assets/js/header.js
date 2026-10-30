@@ -41,7 +41,7 @@ if ( header ) {
     if ( logoGrande ) header.toggleAttribute( 'data-scrolled', window.scrollY > UMBRAL );
 
     // Punto de referencia: centro de la pantalla, a la altura de la fila del logo
-    const y = header.getBoundingClientRect().top + 40;
+    const y = header.getBoundingClientRect().top + parseFloat( getComputedStyle( header ).paddingTop ) + 40;
     let fondo = 'claro';
     for ( const el of document.elementsFromPoint( window.innerWidth / 2, y ) ) {
       if ( header.contains( el ) ) continue;

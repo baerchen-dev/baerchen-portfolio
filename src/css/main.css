@@ -143,6 +143,16 @@
   .admin-bar .site-header { top: 32px; }
 }
 
+/* Móviles con notch o isla (viewport-fit=cover): en horizontal, los márgenes de la retícula no bastan para librarlos,
+ * y los anclajes tienen que parar debajo del header, que ahora incluye la barra de estado.
+ * Sin zonas seguras, env() vale 0 y todo queda igual. Fuera de @layer para ganar a las utilidades.
+ */
+.px-4 { padding-inline: max(1rem, env(safe-area-inset-left), env(safe-area-inset-right)); }
+@media (min-width: 48rem) {
+  .md\:px-8 { padding-inline: max(2rem, env(safe-area-inset-left), env(safe-area-inset-right)); }
+}
+.scroll-mt-18 { scroll-margin-top: calc(4.5rem + env(safe-area-inset-top)); }
+
 /* Escenario del proceso (sections/proyecto-proceso.php): top-24 = justo donde acaba el cristal del header (72 px + 24 de degradado).
  * Siempre con la proporción de las imágenes (592 × 860) y el alto de la pantalla como máximo: en pantallas bajas se estrecha
  * en lugar de recortar la imagen arriba y abajo; en tablet vertical no se estira (recortaba los lados).

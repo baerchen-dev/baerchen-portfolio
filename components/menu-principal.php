@@ -5,7 +5,7 @@
  * Los enlaces entran escalonados desde la derecha: retardos en src/css/main.css (#menu-principal li)
  * Hover: el enlace crece un 25 % hacia la izquierda (scale, no font-size, para no mover los demás)
 -->
-<div id="menu-principal" class="absolute inset-x-0 top-0 -z-10 pt-20 pb-24 bg-bg/90 backdrop-blur-2xl mask-b-from-75% invisible opacity-0 data-open:visible data-open:opacity-100 transition-[opacity,visibility] duration-300">
+<div id="menu-principal" class="absolute inset-x-0 top-0 -z-10 pt-[calc(5rem+env(safe-area-inset-top))] pb-24 bg-bg/90 backdrop-blur-2xl mask-b-from-75% invisible opacity-0 data-open:visible data-open:opacity-100 transition-[opacity,visibility] duration-300">
   <div class="max-w-7xl mx-auto px-4 md:px-8 flex justify-end">
 
     <nav aria-label="<?php esc_attr_e( 'Navegación principal', 'baerchen' ); ?>">

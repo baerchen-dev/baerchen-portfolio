@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <?php wp_head(); ?>
 </head>
 
@@ -21,11 +21,13 @@ $es_home = is_front_page();
  * Fixed (no sticky): el logo de la Home cambia de tamaño al hacer scroll y con sticky la página saltaría.
  * assets/js/header.js añade data-scrolled al bajar (logo de la Home) y data-oscuro sobre secciones oscuras (texto crema).
 -->
-<header class="site-header group/header fixed inset-x-0 top-0 z-50 text-ink data-oscuro:text-bg transition-colors duration-300" <?php echo $es_home ? 'data-logo-grande' : ''; ?>>
+<header class="site-header group/header fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)] text-ink data-oscuro:text-bg transition-colors duration-300" <?php echo $es_home ? 'data-logo-grande' : ''; ?>>
 
-  <!-- CRISTAL · solo desenfoque, sin color: invisible sobre el fondo liso, se nota cuando pasa contenido por debajo.
+  <!-- CRISTAL · también detrás de la hora del móvil (el padding del header deja sitio a la barra de estado).
+       Escritorio: solo desenfoque, invisible sobre el fondo liso. Pantallas táctiles (también el móvil en horizontal, que
+       supera md): con un velo del color de la sección, porque las fotos ensuciaban la banda y le quitaban contraste al logo.
        Se desvanece hacia abajo en lugar de terminar en un borde -->
-  <div class="absolute inset-x-0 top-0 -bottom-6 -z-10 backdrop-blur-2xl mask-b-from-60%" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 top-0 -bottom-6 -z-10 backdrop-blur-2xl mask-b-from-75% md:pointer-fine:mask-b-from-60% bg-bg/85 group-data-oscuro/header:bg-ink/85 md:pointer-fine:bg-transparent md:pointer-fine:group-data-oscuro/header:bg-transparent transition-colors duration-300" aria-hidden="true"></div>
 
   <!-- MENÚ PRINCIPAL · superficie a todo el ancho, por detrás de la fila del logo.
        Va después del cristal: con el mismo -z-10, se pinta encima y el cristal no lo desenfoca -->
@@ -56,4 +58,4 @@ $es_home = is_front_page();
 </header>
 
 <!-- El padding superior deja sitio al header fixed (en la Home, al logo grande) -->
-<main id="contenido" class="flex-1 <?php echo $es_home ? 'pt-[calc(var(--text-logo)+2rem)]' : 'pt-18'; ?>">
+<main id="contenido" class="flex-1 <?php echo $es_home ? 'pt-[calc(var(--text-logo)+2rem+env(safe-area-inset-top))]' : 'pt-[calc(4.5rem+env(safe-area-inset-top))]'; ?>">
