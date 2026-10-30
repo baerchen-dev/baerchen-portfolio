@@ -27,7 +27,7 @@ $es_home = is_front_page();
        Escritorio: solo desenfoque, invisible sobre el fondo liso. Pantallas táctiles (también el móvil en horizontal, que
        supera md): con un velo del color de la sección, porque las fotos ensuciaban la banda y le quitaban contraste al logo.
        Se desvanece hacia abajo en lugar de terminar en un borde -->
-  <div class="absolute inset-x-0 top-0 -bottom-6 -z-10 backdrop-blur-2xl mask-b-from-75% md:pointer-fine:mask-b-from-60% bg-bg/85 group-data-oscuro/header:bg-ink/85 md:pointer-fine:bg-transparent md:pointer-fine:group-data-oscuro/header:bg-transparent transition-colors duration-300" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 top-0 -bottom-6 -z-10 backdrop-blur-2xl mask-b-from-75% md:pointer-fine:mask-b-from-60% bg-bg/55 group-data-oscuro/header:bg-ink/85 md:pointer-fine:bg-transparent md:pointer-fine:group-data-oscuro/header:bg-transparent transition-colors duration-300" aria-hidden="true"></div>
 
   <!-- MENÚ PRINCIPAL · superficie a todo el ancho, por detrás de la fila del logo.
        Va después del cristal: con el mismo -z-10, se pinta encima y el cristal no lo desenfoca -->
