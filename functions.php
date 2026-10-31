@@ -2,6 +2,7 @@
 
 /* MÓDULOS */
 require_once get_template_directory() . '/inc/proyectos.php';   // tipo de contenido Proyecto, etiquetas y campos
+require_once get_template_directory() . '/inc/compartir.php';   // imagen y textos al compartir un enlace (Open Graph)
 
 /* SETUP */
 function baerchen_setup() {
@@ -196,7 +197,7 @@ add_action( 'wp_head', 'baerchen_favicon' );
  * Si está vacío: proyecto → entradilla del caso o frase de la tarjeta · Home → párrafo del hero ·
  * Sobre mí → entradilla · resto → texto general. Se corta a 160 caracteres sin partir palabras.
  */
-function baerchen_meta_descripcion() {
+function baerchen_descripcion() {
   $texto = '';
   if ( function_exists( 'get_field' ) && is_singular() ) {
     $texto = get_field( 'seo_descripcion' );
@@ -207,7 +208,10 @@ function baerchen_meta_descripcion() {
   if ( ! $texto ) $texto = __( 'Portfolio de Francisco Estévez, diseñador UX/UI y desarrollador web: webs claras, rápidas y a medida, del diseño en Figma al desarrollo en WordPress.', 'baerchen' );
   $texto = trim( preg_replace( '/\s+/', ' ', wp_strip_all_tags( $texto ) ) );
   if ( mb_strlen( $texto ) > 160 ) $texto = rtrim( mb_substr( $texto, 0, mb_strrpos( mb_substr( $texto, 0, 157 ), ' ' ) ), ' ,.;:' ) . '…';
-  echo '<meta name="description" content="' . esc_attr( $texto ) . '">' . "\n";
+  return $texto;
+}
+function baerchen_meta_descripcion() {
+  echo '<meta name="description" content="' . esc_attr( baerchen_descripcion() ) . '">' . "\n";
 }
 add_action( 'wp_head', 'baerchen_meta_descripcion', 1 );
 
