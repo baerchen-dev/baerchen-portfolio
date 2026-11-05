@@ -176,6 +176,11 @@ function baerchen_nav_link_class( $atts, $item, $args ) {
   if ( ! empty( $args->link_class ) ) {
     $atts['class'] = $args->link_class;
   }
+  // WordPress quita el #ancla al comparar con la página actual: sin esto, «/#trabajos»
+  // se anunciaba como página actual en la Home, igual que Inicio.
+  if ( false !== strpos( $item->url, '#' ) ) {
+    unset( $atts['aria-current'] );
+  }
   return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'baerchen_nav_link_class', 10, 3 );
