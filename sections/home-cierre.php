@@ -20,7 +20,7 @@ $texto_empleo     = $campo( 'cierre_empleo', __( '¿Buscas a alguien para tu equ
 $url_linkedin     = $campo( 'cierre_linkedin', 'https://www.linkedin.com/in/francisco-estevez-a48a69185/' );
 
 // Formulario y email: los de la página Contacto
-$contacto       = get_page_by_path( 'contacto' );
+$contacto       = baerchen_pagina( 'contacto' );
 $url_formulario = ( $contacto ? get_permalink( $contacto ) : home_url( '/contacto/' ) ) . '#formulario';
 $email          = ( $contacto && function_exists( 'get_field' ) ) ? get_field( 'contacto_email', $contacto->ID ) : '';
 $email          = $email ? $email : 'info@baerchen.dev';

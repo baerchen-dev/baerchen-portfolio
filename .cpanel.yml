@@ -5,5 +5,5 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/baerchen/public_html/wp-content/themes/baerchen/
     - /bin/mkdir -p $DEPLOYPATH
-    - /bin/cp -R acf-json assets components inc sections $DEPLOYPATH
+    - /bin/cp -R acf-json assets components inc languages sections $DEPLOYPATH
     - /bin/cp footer.php front-page.php functions.php header.php index.php page-contacto.php page-sobre-mi.php page-trabajos.php single-proyecto.php style.css screenshot.jpg $DEPLOYPATH

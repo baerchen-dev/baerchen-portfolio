@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: Trabajos
+ * (Elegible en Página → Plantilla, para las traducciones: su slug no es el de la página en español.)
  * PÁGINA TRABAJOS (Figma: "Grid / XL 1445 Trabajos", nodo 51:197)
  * WordPress la usa automáticamente para la página con slug "trabajos".
  * Titular editable en el campo ACF "Trabajos · Cabecera". Tarjetas: components/card-proyecto.php

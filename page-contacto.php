@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: Contacto
+ * (Elegible en Página → Plantilla, para las traducciones: su slug no es el de la página en español.)
  * PÁGINA CONTACTO (Figma: "Grid / XL 1444 contacto", nodo 123:1544)
  * WordPress la usa automáticamente para la página con slug "contacto".
  * xl: texto en las columnas 1–5 · columna 6 vacía · formulario en las 7–12. Debajo, la cinta y 3 tarjetas de servicios.

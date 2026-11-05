@@ -1,0 +1,510 @@
+# Copyright (C) 2026 Fran
+# This file is distributed under the same license as the Baerchen theme.
+msgid ""
+msgstr ""
+"Project-Id-Version: Baerchen 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Language: en_GB\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-05T16:23:40+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: baerchen\n"
+
+#. Theme Name of the theme
+#: style.css
+#: sections/sobremi-aficiones.php:18
+msgid "Baerchen"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://baerchen.dev"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Tema propio para el portfolio personal de Fran (Baerchen.dev). Construido desde cero."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Fran"
+msgstr ""
+
+#: components/boton-hablamos.php:15
+msgid "Hablamos"
+msgstr "Let's talk"
+
+#: components/card-proyecto.php:54
+#: sections/home-cierre.php:63
+#: sections/proyecto-alcance.php:68
+#: sections/proyecto-hero.php:74
+#: sections/proyecto-siguiente.php:69
+msgid "(se abre en una pestaña nueva)"
+msgstr "(opens in a new tab)"
+
+#: components/card-proyecto.php:59
+#: sections/proyecto-siguiente.php:56
+msgid "Etiquetas"
+msgstr "Tags"
+
+#: components/card-proyecto.php:61
+#: sections/proyecto-siguiente.php:58
+msgid "En desarrollo"
+msgstr "In development"
+
+#: components/menu-principal.php:11
+msgid "Navegación principal"
+msgstr "Main navigation"
+
+#: components/selector-idioma.php:30
+msgid "Idioma"
+msgstr "Language"
+
+#: components/tarjeta-servicio.php:19
+msgid "Qué incluye"
+msgstr "What's included"
+
+#: footer.php:19
+msgid "Navegación"
+msgstr "Navigation"
+
+#: footer.php:20
+msgid "Social"
+msgstr "Social"
+
+#: footer.php:21
+msgid "Legal"
+msgstr "Legal"
+
+#. Template Name of the theme
+#: footer.php:26
+msgid "Contacto"
+msgstr "Contact"
+
+#: footer.php:34
+msgid "Francisco Estévez · Todos los derechos reservados"
+msgstr "Francisco Estévez · All rights reserved"
+
+#: functions.php:14
+msgid "Menú principal"
+msgstr "Main menu"
+
+#: functions.php:15
+msgid "Footer · Social"
+msgstr "Footer · Social"
+
+#: functions.php:16
+msgid "Footer · Legal"
+msgstr "Footer · Legal"
+
+#: functions.php:250
+msgid "Portfolio de Francisco Estévez, diseñador UX/UI y desarrollador web: webs claras, rápidas y a medida, del diseño en Figma al desarrollo en WordPress."
+msgstr "Portfolio of Francisco Estévez, UX/UI designer and web developer: clear, fast, bespoke websites, from design in Figma to development in WordPress."
+
+#: header.php:13
+msgid "Saltar al contenido"
+msgstr "Skip to content"
+
+#: header.php:51
+msgid "Abrir menú"
+msgstr "Open menu"
+
+#: header.php:51
+msgid "Cerrar menú"
+msgstr "Close menu"
+
+#: inc/compartir.php:53
+msgid "Diseño UX y desarrollo web"
+msgstr "UX design and web development"
+
+#: inc/compartir.php:63
+msgid "Caso de estudio"
+msgstr "Case study"
+
+#: inc/proyectos.php:16
+msgid "Proyectos"
+msgstr "Projects"
+
+#: inc/proyectos.php:17
+msgid "Proyecto"
+msgstr "Project"
+
+#: inc/proyectos.php:18
+msgid "Añadir proyecto"
+msgstr "Add project"
+
+#: inc/proyectos.php:19
+msgid "Editar proyecto"
+msgstr "Edit project"
+
+#: inc/proyectos.php:20
+msgid "Todos los proyectos"
+msgstr "All projects"
+
+#: inc/proyectos.php:33
+msgid "Etiquetas de proyecto"
+msgstr "Project tags"
+
+#: inc/proyectos.php:34
+msgid "Etiqueta"
+msgstr "Tag"
+
+#: inc/proyectos.php:35
+msgid "Añadir etiqueta"
+msgstr "Add tag"
+
+#: page-contacto.php:19
+msgid "/ Contacto"
+msgstr "/ Contact"
+
+#: page-contacto.php:20
+msgid "Construyamos algo juntos"
+msgstr "Let's build something together"
+
+#: page-contacto.php:21
+msgid "/ Escríbeme"
+msgstr "/ Get in touch"
+
+#: page-contacto.php:23
+msgid "Respondo en 24–48 h"
+msgstr "I reply within 24–48 h"
+
+#: page-contacto.php:25
+msgid "Diseño UX/UI · Desarrollo WordPress · Mejora de webs"
+msgstr "UX/UI design · WordPress development · Website improvements"
+
+#: page-contacto.php:28
+msgid "Diseño UX/UI"
+msgstr "UX/UI design"
+
+#: page-contacto.php:28
+msgid "De la idea al prototipo, pensando en quien la va a usar."
+msgstr "From idea to prototype, designed around the people who will use it."
+
+#: page-contacto.php:29
+msgid "Desarrollo WordPress"
+msgstr "WordPress development"
+
+#: page-contacto.php:29
+msgid "Webs a medida, rápidas y fáciles de editar."
+msgstr "Bespoke websites: fast and easy to edit."
+
+#: page-contacto.php:30
+msgid "Mejora de webs"
+msgstr "Website improvements"
+
+#: page-contacto.php:30
+msgid "Tu web actual, más rápida, accesible y fácil de usar."
+msgstr "Your current website, faster, more accessible and easier to use."
+
+#: page-contacto.php:57
+msgid "Falta el formulario: crea uno en Contacto → Añadir nuevo (código en inc/formulario-contacto.html) y pega su código corto en el campo \"Formulario\" de esta página."
+msgstr "The form is missing: create one under Contact → Add New (code in inc/formulario-contacto.html) and paste its shortcode into this page's \"Formulario\" field."
+
+#: page-contacto.php:71
+msgid "Servicios"
+msgstr "Services"
+
+#. Template Name of the theme
+msgid "Sobre mí"
+msgstr "About me"
+
+#. Template Name of the theme
+msgid "Trabajos"
+msgstr "Work"
+
+#: page-trabajos.php:13
+#: sections/home-trabajos.php:23
+msgid "Creando proyectos"
+msgstr "Building projects"
+
+#: page-trabajos.php:36
+msgid "Pronto habrá proyectos aquí."
+msgstr "Projects coming soon."
+
+#: sections/home-cierre.php:15
+msgid "Disponible para proyectos"
+msgstr "Available for projects"
+
+#: sections/home-cierre.php:16
+msgid "¿Tienes un proyecto en mente?"
+msgstr "Have a project in mind?"
+
+#: sections/home-cierre.php:17
+msgid "Ir al formulario"
+msgstr "Go to the form"
+
+#: sections/home-cierre.php:18
+msgid "Envíame un email"
+msgstr "Send me an email"
+
+#: sections/home-cierre.php:19
+msgid "¿Buscas a alguien para tu equipo?"
+msgstr "Looking for someone to join your team?"
+
+#: sections/home-hero.php:14
+msgid "/ Diseño UX & desarrollo web"
+msgstr "/ UX design & web development"
+
+#: sections/home-hero.php:15
+msgid "Construyo webs que duran"
+msgstr "I build websites that last"
+
+#: sections/home-hero.php:16
+msgid "Convierto tus ideas en productos digitales rápidos y fáciles de usar. Sin tecnicismos ni complicaciones: diseño con sentido y desarrollo a medida."
+msgstr "I turn your ideas into fast, easy-to-use digital products. No jargon, no complications: thoughtful design and bespoke development."
+
+#: sections/home-hero.php:17
+msgid "Ver trabajos"
+msgstr "See work"
+
+#: sections/home-hero.php:34
+#: sections/sobremi-hero.php:38
+msgid "Retrato de Francisco Estévez"
+msgstr "Portrait of Francisco Estévez"
+
+#: sections/home-sobre-mi.php:20
+#: sections/sobremi-hero.php:15
+msgid "/ Sobre mí"
+msgstr "/ About me"
+
+#: sections/home-sobre-mi.php:21
+msgid "Doy vida a productos digitales"
+msgstr "I bring digital products to life"
+
+#: sections/home-sobre-mi.php:22
+msgid "Soy Fran, diseñador UX/UI y desarrollador web. Diseño en Figma y lo llevo a WordPress sin constructores: webs rápidas, accesibles y hechas a medida, de principio a fin."
+msgstr "I'm Fran, a UX/UI designer and web developer. I design in Figma and build in WordPress without page builders: fast, accessible, bespoke websites from start to finish."
+
+#: sections/home-sobre-mi.php:46
+msgid "Más sobre mí"
+msgstr "More about me"
+
+#: sections/home-sobre-mi.php:59
+msgid "Escritorio de trabajo con Figma y código en pantalla"
+msgstr "Desk with Figma and code on screen"
+
+#: sections/proyecto-alcance.php:25
+msgid "/ Alcance"
+msgstr "/ Outcome"
+
+#: sections/proyecto-alcance.php:48
+msgid "Qué haría distinto hoy"
+msgstr "What I'd do differently today"
+
+#: sections/proyecto-alcance.php:64
+msgid "Explorar el proyecto publicado"
+msgstr "Explore the live project"
+
+#: sections/proyecto-alcance.php:66
+#, php-format
+msgid "Visitar %s"
+msgstr "Visit %s"
+
+#: sections/proyecto-encargo.php:22
+msgid "/ 01 — El encargo"
+msgstr "/ 01 — The brief"
+
+#: sections/proyecto-entrega.php:24
+msgid "/ 04 — La entrega"
+msgstr "/ 04 — The delivery"
+
+#: sections/proyecto-hero.php:28
+#: sections/proyecto-siguiente.php:50
+#, php-format
+msgid "Caso de estudio — %s"
+msgstr "Case study — %s"
+
+#: sections/proyecto-hero.php:72
+msgid "Ver web en vivo"
+msgstr "View live site"
+
+#: sections/proyecto-proceso.php:41
+msgid "/ 02 — El proceso"
+msgstr "/ 02 — The process"
+
+#: sections/proyecto-siguiente.php:27
+msgid "/ Siguiente caso de estudio"
+msgstr "/ Next case study"
+
+#: sections/proyecto-siguiente.php:67
+msgid "Ver web"
+msgstr "View site"
+
+#: sections/proyecto-siguiente.php:67
+msgid "Ver caso de estudio"
+msgstr "View case study"
+
+#: sections/proyecto-siguiente.php:72
+msgid "Caso de estudio en preparación"
+msgstr "Case study in progress"
+
+#: sections/proyecto-sistema.php:52
+msgid "/ 03 — El sistema"
+msgstr "/ 03 — The system"
+
+#: sections/proyecto-sistema.php:77
+msgid "Colores"
+msgstr "Colours"
+
+#: sections/proyecto-sistema.php:99
+msgid "Principio"
+msgstr "Principle"
+
+#: sections/proyecto-sistema.php:107
+#, php-format
+msgid "Contraste del %s"
+msgstr "%s contrast"
+
+#: sections/proyecto-sistema.php:111
+msgid "texto normal (AA)"
+msgstr "normal text (AA)"
+
+#: sections/proyecto-sistema.php:111
+msgid "solo grande y botones"
+msgstr "large text and buttons only"
+
+#: sections/proyecto-sistema.php:111
+msgid "solo decorativo"
+msgstr "decorative only"
+
+#: sections/proyecto-sistema.php:117
+#, php-format
+msgid "Sobre %1$s · %2$s"
+msgstr "On %1$s · %2$s"
+
+#: sections/sobremi-aficiones.php:12
+msgid "/ Fuera de la pantalla"
+msgstr "/ Away from the screen"
+
+#: sections/sobremi-aficiones.php:13
+msgid "Lo que hago cuando cierro el portátil."
+msgstr "What I do when I close the laptop."
+
+#: sections/sobremi-aficiones.php:16
+msgid "Sierra de Málaga"
+msgstr "Málaga mountains"
+
+#: sections/sobremi-aficiones.php:16
+msgid "Organizo rutas en un club de senderismo. De ahí nació PASO."
+msgstr "I organise routes for a hiking club. That's where PASO was born."
+
+#: sections/sobremi-aficiones.php:17
+msgid "Moda · 1992"
+msgstr "Fashion · 1992"
+
+#: sections/sobremi-aficiones.php:17
+msgid "Figurines a lápiz de mi etapa en el Institut Català de la Moda. Ahí aprendí proporción, textura y detalle."
+msgstr "Pencil fashion sketches from my time at the Institut Català de la Moda. That's where I learnt proportion, texture and detail."
+
+#: sections/sobremi-aficiones.php:18
+msgid "«Osito» en alemán, un guiño a mis años trabajando en Alemania. Hoy, con vistas a la Costa del Sol."
+msgstr "“Little bear” in German, a nod to my years working in Germany. Today, with views of the Costa del Sol."
+
+#: sections/sobremi-hero.php:16
+msgid ""
+"Diseño con sentido.\n"
+"Desarrollo sin atajos."
+msgstr "Design with purpose.
+Development without shortcuts."
+
+#: sections/sobremi-hero.php:17
+msgid "Soy Fran, diseñador UX/UI y desarrollador web. Diseño y construyo webs claras, cuidadas y fáciles de usar."
+msgstr "I'm Fran, a UX/UI designer and web developer. I design and build clear, polished, easy-to-use websites."
+
+#: sections/sobremi-hero.php:18
+msgid "Me muevo entre Figma y el código porque creo que una buena experiencia no termina en una pantalla: también tiene que funcionar bien, cargar rápido y durar."
+msgstr "I move between Figma and code because I believe a good experience doesn't end on a screen: it also has to work well, load fast and last."
+
+#: sections/sobremi-hero.php:19
+msgid "Conoce cómo trabajo"
+msgstr "See how I work"
+
+#: sections/sobremi-proceso.php:12
+msgid "/ Cómo trabajo"
+msgstr "/ How I work"
+
+#: sections/sobremi-proceso.php:13
+msgid "De la pregunta correcta al producto que funciona."
+msgstr "From the right question to a product that works."
+
+#: sections/sobremi-proceso.php:14
+msgid ""
+"Entender antes de diseñar | Empiezo por el problema, las personas y el contexto. Las decisiones visuales llegan después.\n"
+"Diseñar con intención | Convierto lo complejo en recorridos claros, sistemas coherentes y decisiones que se pueden explicar.\n"
+"Construir para durar | Desarrollo soluciones rápidas, accesibles y fáciles de mantener. Sin capas innecesarias."
+msgstr "Understand before designing | I start with the problem, the people and the context. Visual decisions come later.
+Design with intent | I turn complexity into clear journeys, coherent systems and decisions that can be explained.
+Build to last | I develop fast, accessible solutions that are easy to maintain. No unnecessary layers."
+
+#: sections/sobremi-razones.php:12
+msgid "/ Por qué yo"
+msgstr "/ Why me"
+
+#: sections/sobremi-razones.php:13
+msgid "Una sola mirada para cuidar todo el recorrido."
+msgstr "One pair of eyes looking after the whole journey."
+
+#: sections/sobremi-razones.php:14
+msgid ""
+"Visión completa | Diseño y desarrollo conviven desde el primer boceto.\n"
+"Base técnica real | Más de 20 años en tecnología. Entiendo lo que hay detrás de una web: servidor, correo y mantenimiento.\n"
+"Criterio y detalle | Cuido tanto la idea general como el último estado de un botón.\n"
+"Cuatro idiomas | Trabajo en español, catalán, alemán e inglés."
+msgstr "The full picture | Design and development work together from the first sketch.
+A real technical grounding | Over 20 years in tech. I understand what sits behind a website: server, email and maintenance.
+Judgement and detail | I care as much about the big idea as about the last state of a button.
+Four languages | I work in Spanish, Catalan, German and English."
+
+#: sections/sobremi-stack.php:12
+msgid "/ Stack"
+msgstr "/ Stack"
+
+#: sections/sobremi-stack.php:13
+msgid "Las herramientas cambian. El criterio permanece."
+msgstr "Tools change. Judgement stays."
+
+#: sections/sobremi-stack.php:14
+msgid ""
+"Diseño | Figma · FigJam · Prototipado · Design systems\n"
+"Desarrollo | WordPress · JavaScript · React\n"
+"Front-end | HTML · CSS · Tailwind · Git\n"
+"Calidad | Accesibilidad · Rendimiento · SEO técnico · Responsive"
+msgstr "Design | Figma · FigJam · Prototyping · Design systems
+Development | WordPress · JavaScript · React
+Front-end | HTML · CSS · Tailwind · Git
+Quality | Accessibility · Performance · Technical SEO · Responsive"
+
+#: sections/sobremi-trayectoria.php:16
+msgid "/ Trayectoria"
+msgstr "/ Background"
+
+#: sections/sobremi-trayectoria.php:17
+msgid "No llegué por un camino recto. Y eso es una ventaja."
+msgstr "I didn't get here in a straight line. And that's an advantage."
+
+#: sections/sobremi-trayectoria.php:18
+msgid "Empecé diseñando moda, crecí en la tecnología y hoy junto las dos cosas: diseño y código."
+msgstr "I started out designing fashion, grew up in tech and today I bring the two together: design and code."
+
+#: sections/sobremi-trayectoria.php:20
+msgid ""
+"2025 — Hoy | Diseño UX/UI y desarrollo web | Máster en La Hauss, certificado IFCD0110 cum laude y freelance desde 2026.\n"
+"2012 — 2023 | Alemania | Once años en Colonia: administración industrial y soporte IT de 1er y 2º nivel.\n"
+"1994 — 2011 | Barcelona | Servicio técnico y dirección comercial en empresas de informática.\n"
+"1991 — 1994 | El origen | Diseño de moda en el Institut Català de la Moda."
+msgstr "2025 — Today | UX/UI design and web development | Master's at La Hauss, IFCD0110 certificate cum laude and freelance since 2026.
+2012 — 2023 | Germany | Eleven years in Cologne: industrial administration and 1st and 2nd line IT support.
+1994 — 2011 | Barcelona | Technical service and sales management at IT companies.
+1991 — 1994 | The beginning | Fashion design at the Institut Català de la Moda."
+
+#: sections/sobremi-trayectoria.php:33
+msgid "Poste de señales de senderismo en la montaña nevada"
+msgstr "Hiking signpost on a snowy mountain"
+

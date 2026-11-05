@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: Sobre mí
+ * (Elegible en Página → Plantilla, para las traducciones: su slug no es el de la página en español.)
  * PÁGINA SOBRE MÍ (Figma: marco "Sobre mí", nodo 234:2189)
  * WordPress la usa automáticamente para la página con slug "sobre-mi".
  * Bloques: presentación (crema) → cómo trabajo (oscuro) → por qué yo (crema) → trayectoria (crema, foto fija)

@@ -7,7 +7,7 @@
  *                enlace o botón que la contiene (ese elemento necesita la clase "group"). Quieta con "reducir movimiento".
  * Familia (2026-10-17, Figma "Iconos · flecha", variante C): trazo 2,25 y flechas que ocupan casi toda la caja,
  * para que tengan el mismo peso que el texto. Si se cambia aquí, cambiar también los dos SVG de inc/formulario-contacto.html.
- * Nombres: flecha-derecha (→), flecha-abajo (↓), flecha-diagonal (↗), desplegable (⌄)
+ * Nombres: flecha-derecha (→), flecha-abajo (↓), flecha-diagonal (↗), desplegable (⌄), idioma (bola del mundo, selector de idioma)
  * Decorativo (aria-hidden): el texto del enlace o del botón ya dice qué hace.
  */
 $trazos = array(
@@ -15,6 +15,7 @@ $trazos = array(
   'flecha-abajo'    => 'M12 4v16M5 13l7 7 7-7',
   'flecha-diagonal' => 'M5 19L18 6M7 6h11v11',
   'desplegable'     => 'M5 9l7 7 7-7',
+  'idioma'          => 'M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0zM3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z',
 );
 $nombre = $args['nombre'] ?? 'flecha-derecha';
 $clase  = $args['clase'] ?? 'size-5';

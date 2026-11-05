@@ -6,6 +6,7 @@ require_once get_template_directory() . '/inc/compartir.php';   // imagen y text
 
 /* SETUP */
 function baerchen_setup() {
+  load_theme_textdomain( 'baerchen', get_template_directory() . '/languages' );   // textos fijos del tema en inglés: languages/en_GB.mo
   add_theme_support( 'title-tag' );
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'html5', array( 'search-form', 'gallery', 'caption', 'style', 'script' ) );
@@ -121,17 +122,39 @@ function baerchen_enqueue_caso() {
 }
 add_action( 'wp_enqueue_scripts', 'baerchen_enqueue_caso' );
 
+/* PÁGINAS DEL TEMA EN EL IDIOMA DE LA VISITA (Polylang)
+ * Las plantillas buscan Contacto y Sobre mí por su slug en español; en inglés tienen otro slug.
+ * baerchen_pagina( 'contacto' )    → la página en el idioma actual (la española si no hay traducción o sin Polylang)
+ * baerchen_es_pagina( 'contacto' ) → is_page() que vale para la página y todas sus traducciones
+ */
+function baerchen_pagina( $slug ) {
+  $pagina = get_page_by_path( $slug );
+  if ( $pagina && function_exists( 'pll_get_post' ) ) {
+    $traducida = pll_get_post( $pagina->ID );
+    if ( $traducida ) $pagina = get_post( $traducida );
+  }
+  return $pagina;
+}
+
+function baerchen_es_pagina( $slug ) {
+  $pagina = get_page_by_path( $slug );
+  if ( ! $pagina ) return is_page( $slug );
+  $ids = function_exists( 'pll_get_post_translations' ) ? array_values( pll_get_post_translations( $pagina->ID ) ) : array();
+  $ids[] = $pagina->ID;
+  return is_page( array_map( 'intval', $ids ) );
+}
+
 /* CONTACT FORM 7
  * Sus archivos (CSS y JS) solo se cargan en la página Contacto, y sin los <p> y <br> que añade al formulario
  * (la maquetación la lleva el propio código del formulario: inc/formulario-contacto.html).
  */
-add_filter( 'wpcf7_load_js',  fn() => is_page( 'contacto' ) );
-add_filter( 'wpcf7_load_css', fn() => is_page( 'contacto' ) );
+add_filter( 'wpcf7_load_js',  fn() => baerchen_es_pagina( 'contacto' ) );
+add_filter( 'wpcf7_load_css', fn() => baerchen_es_pagina( 'contacto' ) );
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
 /* CF7 encola Turnstile en todas las páginas y los filtros de arriba no le afectan. */
 add_action( 'wp_enqueue_scripts', function () {
-  if ( ! is_page( 'contacto' ) ) {
+  if ( ! baerchen_es_pagina( 'contacto' ) ) {
     wp_dequeue_script( 'cloudflare-turnstile' );
   }
 }, 20 );
@@ -185,6 +208,20 @@ function baerchen_nav_link_class( $atts, $item, $args ) {
 }
 add_filter( 'nav_menu_link_attributes', 'baerchen_nav_link_class', 10, 3 );
 
+/* ACF · CAMPOS DE LA HOME TAMBIÉN EN SUS TRADUCCIONES
+ * Los grupos "Home · …" se muestran en la "página de inicio" (page_type = front_page). En el editor,
+ * Polylang no siempre traduce esa opción, y la portada en inglés se quedaría sin campos:
+ * aquí cuenta como página de inicio cualquier traducción de ella.
+ */
+function baerchen_acf_portada_traducida( $coincide, $regla, $pantalla ) {
+  if ( $coincide || 'front_page' !== $regla['value'] || '==' !== $regla['operator'] || empty( $pantalla['post_id'] ) || ! function_exists( 'pll_get_post_translations' ) ) {
+    return $coincide;
+  }
+  $portada = (int) get_option( 'page_on_front' );
+  return $portada && in_array( (int) $pantalla['post_id'], array_map( 'intval', pll_get_post_translations( $portada ) ), true );
+}
+add_filter( 'acf/location/rule_match/page_type', 'baerchen_acf_portada_traducida', 10, 3 );
+
 /* FAVICON (osito, assets/img/)
  * favicon.svg cambia de color solo: ink en modo claro, crema en modo oscuro (media query dentro del SVG).
  * apple-touch-icon.png: 180 × 180, fondo crema opaco (iOS no admite transparencia ni SVG).
@@ -208,7 +245,7 @@ function baerchen_descripcion() {
     $texto = get_field( 'seo_descripcion' );
     if ( ! $texto && is_singular( 'proyecto' ) ) $texto = get_field( 'caso_entradilla' ) ?: get_field( 'proyecto_frase' );
     if ( ! $texto && is_front_page() )           $texto = get_field( 'hero_parrafo' );
-    if ( ! $texto && is_page( 'sobre-mi' ) )     $texto = get_field( 'sobre_entradilla' );
+    if ( ! $texto && baerchen_es_pagina( 'sobre-mi' ) )     $texto = get_field( 'sobre_entradilla' );
   }
   if ( ! $texto ) $texto = __( 'Portfolio de Francisco Estévez, diseñador UX/UI y desarrollador web: webs claras, rápidas y a medida, del diseño en Figma al desarrollo en WordPress.', 'baerchen' );
   $texto = trim( preg_replace( '/\s+/', ' ', wp_strip_all_tags( $texto ) ) );

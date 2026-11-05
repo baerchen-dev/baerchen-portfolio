@@ -6,7 +6,7 @@
  * Hover: el enlace crece un 25 % hacia la izquierda (scale, no font-size, para no mover los demás)
 -->
 <div id="menu-principal" class="absolute inset-x-0 top-0 -z-10 pt-[calc(5rem+env(safe-area-inset-top))] pb-24 bg-bg/90 backdrop-blur-2xl mask-b-from-75% invisible opacity-0 data-open:visible data-open:opacity-100 transition-[opacity,visibility] duration-300">
-  <div class="max-w-7xl mx-auto px-4 md:px-8 flex justify-end">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 flex flex-col items-end gap-8">
 
     <nav aria-label="<?php esc_attr_e( 'Navegación principal', 'baerchen' ); ?>">
       <?php wp_nav_menu( array(
@@ -18,6 +18,9 @@
         'link_class'     => 'inline-flex items-center font-bold text-xl md:text-[1.375rem] uppercase tracking-titulo leading-none cursor-pointer origin-right hover:scale-125 transition-transform duration-300 ease-out motion-reduce:transition-none motion-reduce:hover:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current',
       ) ); ?>
     </nav>
+
+    <!-- Idioma: solo en móvil (en md+ va en la fila del header). Figma: ficha "Menú · Móvil" -->
+    <?php get_template_part( 'components/selector-idioma', null, array( 'clase' => 'flex md:hidden' ) ); ?>
 
   </div>
 </div>

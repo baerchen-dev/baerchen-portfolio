@@ -23,7 +23,7 @@ $parrafo  = $campo( 'sobremi_parrafo', __( 'Soy Fran, diseñador UX/UI y desarro
 $foto_id  = $campo( 'sobremi_foto', 0 );
 
 // Enlace a la página Sobre mí: si está publicada
-$pagina_sobre = get_page_by_path( 'sobre-mi' );
+$pagina_sobre = baerchen_pagina( 'sobre-mi' );
 $url_sobre    = ( $pagina_sobre && 'publish' === $pagina_sobre->post_status ) ? get_permalink( $pagina_sobre ) : '';
 ?>
 <!-- data-cortina: al terminar de verse se queda fija y el cierre oscuro sube por encima (top calculado en header.js) -->

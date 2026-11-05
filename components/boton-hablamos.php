@@ -7,9 +7,9 @@
  * $args['clase'] Visibilidad y clases extra. Por defecto 'inline-flex'.
  *                 Incluir siempre el display (p. ej. 'hidden md:inline-flex'): si el componente
  *                 fijara el suyo, chocaría con 'hidden' y el botón se vería siempre
- * $args['url']   Destino. Por defecto, la página con slug "contacto"
+ * $args['url']   Destino. Por defecto, la página Contacto en el idioma actual
  */
-$contacto = get_page_by_path( 'contacto' );
+$contacto = baerchen_pagina( 'contacto' );
 $url      = $args['url'] ?? ( $contacto ? get_permalink( $contacto ) : home_url( '/contacto/' ) );
 $clase    = $args['clase'] ?? 'inline-flex';
 $texto    = __( 'Hablamos', 'baerchen' );

@@ -43,8 +43,9 @@ $es_home = is_front_page();
 
     </div>
 
-    <!-- ACCIONES · HABLAMOS (escritorio) + botón de menú -->
+    <!-- ACCIONES · idioma y HABLAMOS (escritorio) + botón de menú. En móvil, el idioma va dentro del menú -->
     <div class="h-10 shrink-0 flex items-center gap-6">
+      <?php get_template_part( 'components/selector-idioma', null, array( 'clase' => 'hidden md:flex' ) ); ?>
       <?php get_template_part( 'components/boton-hablamos', null, array( 'clase' => 'hidden md:inline-flex' ) ); ?>
 
       <button type="button" class="menu-toggle group relative -mr-2 size-10 cursor-pointer focus-visible:outline-2 focus-visible:outline-current" aria-controls="menu-principal" aria-expanded="false" aria-label="<?php esc_attr_e( 'Abrir menú', 'baerchen' ); ?>" data-label-abrir="<?php esc_attr_e( 'Abrir menú', 'baerchen' ); ?>" data-label-cerrar="<?php esc_attr_e( 'Cerrar menú', 'baerchen' ); ?>">

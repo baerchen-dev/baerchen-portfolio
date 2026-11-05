@@ -6,10 +6,21 @@
             "key": "field_trabajos_titular",
             "label": "Titular",
             "name": "trabajos_titular",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
-            "placeholder": "Creando proyectos"
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Creando proyectos",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -18,6 +29,13 @@
                 "param": "page",
                 "operator": "==",
                 "value": "13"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-trabajos.php"
             }
         ]
     ],
@@ -30,5 +48,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1790856340
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1793895303
 }

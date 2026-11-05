@@ -6,276 +6,562 @@
             "key": "field_sobre_tab_hero",
             "label": "Presentación",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_sobre_etiqueta",
             "label": "Etiqueta",
             "name": "sobre_etiqueta",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
-            "placeholder": "/ Sobre mí"
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "\/ Sobre mí",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_sobre_titular",
             "label": "Titular",
             "name": "sobre_titular",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Un salto de línea donde quieras partir el titular. Si se deja vacío, se usa el texto del diseño.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 2,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_sobre_entradilla",
             "label": "Entradilla",
             "name": "sobre_entradilla",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Si se deja vacío, se usa el texto del diseño.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 3,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_sobre_parrafo",
             "label": "Párrafo",
             "name": "sobre_parrafo",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Si se deja vacío, se usa el texto del diseño.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 3,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_sobre_enlace",
             "label": "Enlace a Cómo trabajo",
             "name": "sobre_enlace",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
-            "placeholder": "Conoce cómo trabajo"
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Conoce cómo trabajo",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_sobre_foto",
             "label": "Foto",
             "name": "sobre_foto",
+            "aria-label": "",
             "type": "image",
             "instructions": "Vertical 4:5 (ideal 976 × 1220). Sin esquinas redondeadas: las pone la web.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
             "preview_size": "medium",
-            "library": "all"
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_sobre_tab_proceso",
             "label": "Cómo trabajo",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_sobre_proceso_etiqueta",
             "label": "Etiqueta",
             "name": "sobre_proceso_etiqueta",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
-            "placeholder": "/ Cómo trabajo"
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "\/ Cómo trabajo",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_sobre_proceso_titular",
             "label": "Titular",
             "name": "sobre_proceso_titular",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Si se deja vacío, se usa el texto del diseño.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 2,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_sobre_proceso_lista",
             "label": "Tarjetas",
             "name": "sobre_proceso_lista",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Una tarjeta por línea: Título | Texto. Se numeran solas (01, 02…). Si se deja vacío, se usa el texto del diseño.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 4,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_sobre_tab_razones",
             "label": "Por qué yo",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_sobre_razones_etiqueta",
             "label": "Etiqueta",
             "name": "sobre_razones_etiqueta",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
-            "placeholder": "/ Por qué yo"
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "\/ Por qué yo",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_sobre_razones_titular",
             "label": "Titular",
             "name": "sobre_razones_titular",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Si se deja vacío, se usa el texto del diseño.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 2,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_sobre_razones_lista",
             "label": "Razones",
             "name": "sobre_razones_lista",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Una razón por línea: Título | Texto. Se numeran solas. Si se deja vacío, se usa el texto del diseño.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 5,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_sobre_tab_trayectoria",
             "label": "Trayectoria",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_sobre_trayectoria_etiqueta",
             "label": "Etiqueta",
             "name": "sobre_trayectoria_etiqueta",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
-            "placeholder": "/ Trayectoria"
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "\/ Trayectoria",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_sobre_trayectoria_titular",
             "label": "Titular",
             "name": "sobre_trayectoria_titular",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Si se deja vacío, se usa el texto del diseño.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 2,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_sobre_trayectoria_parrafo",
             "label": "Párrafo",
             "name": "sobre_trayectoria_parrafo",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Si se deja vacío, se usa el texto del diseño.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 2,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_sobre_trayectoria_foto",
             "label": "Foto",
             "name": "sobre_trayectoria_foto",
+            "aria-label": "",
             "type": "image",
             "instructions": "Vertical 2:3 (ideal 976 × 1448). Se queda fija en escritorio mientras se recorre la línea de tiempo.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "id",
             "preview_size": "medium",
-            "library": "all"
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_sobre_trayectoria_lista",
             "label": "Etapas",
             "name": "sobre_trayectoria_lista",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Una etapa por línea, de la más reciente a la más antigua: Años | Título | Texto. Ej.: 2012 — 2023 | Alemania | Once años en Colonia… Si se deja vacío, se usa el texto del diseño.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 5,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_sobre_tab_aficiones",
             "label": "Fuera de la pantalla",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_sobre_aficiones_etiqueta",
             "label": "Etiqueta",
             "name": "sobre_aficiones_etiqueta",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
-            "placeholder": "/ Fuera de la pantalla"
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "\/ Fuera de la pantalla",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_sobre_aficiones_titular",
             "label": "Titular",
             "name": "sobre_aficiones_titular",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Si se deja vacío, se usa el texto del diseño.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 2,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_sobre_aficion_1",
             "label": "Afición 1",
             "name": "sobre_aficion_1",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
             "sub_fields": [
                 {
                     "key": "field_sobre_aficion_1_foto",
                     "label": "Foto",
                     "name": "foto",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "Vertical 2:3 (ideal 976 × 1448).",
                     "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "return_format": "id",
                     "preview_size": "medium",
-                    "library": "all"
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 },
                 {
                     "key": "field_sobre_aficion_1_titulo",
                     "label": "Título",
                     "name": "titulo",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
-                    "placeholder": ""
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
                 },
                 {
                     "key": "field_sobre_aficion_1_texto",
                     "label": "Texto",
                     "name": "texto",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "rows": 2,
-                    "new_lines": ""
+                    "new_lines": "",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": ""
                 }
             ]
         },
@@ -283,40 +569,82 @@
             "key": "field_sobre_aficion_2",
             "label": "Afición 2",
             "name": "sobre_aficion_2",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
             "sub_fields": [
                 {
                     "key": "field_sobre_aficion_2_foto",
                     "label": "Foto",
                     "name": "foto",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "Vertical 2:3 (ideal 976 × 1448).",
                     "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "return_format": "id",
                     "preview_size": "medium",
-                    "library": "all"
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 },
                 {
                     "key": "field_sobre_aficion_2_titulo",
                     "label": "Título",
                     "name": "titulo",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
-                    "placeholder": ""
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
                 },
                 {
                     "key": "field_sobre_aficion_2_texto",
                     "label": "Texto",
                     "name": "texto",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "rows": 2,
-                    "new_lines": ""
+                    "new_lines": "",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": ""
                 }
             ]
         },
@@ -324,40 +652,82 @@
             "key": "field_sobre_aficion_3",
             "label": "Afición 3",
             "name": "sobre_aficion_3",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
             "sub_fields": [
                 {
                     "key": "field_sobre_aficion_3_foto",
                     "label": "Foto",
                     "name": "foto",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "Vertical 2:3 (ideal 976 × 1448).",
                     "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "return_format": "id",
                     "preview_size": "medium",
-                    "library": "all"
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 },
                 {
                     "key": "field_sobre_aficion_3_titulo",
                     "label": "Título",
                     "name": "titulo",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
-                    "placeholder": ""
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
                 },
                 {
                     "key": "field_sobre_aficion_3_texto",
                     "label": "Texto",
                     "name": "texto",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "rows": 2,
-                    "new_lines": ""
+                    "new_lines": "",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": ""
                 }
             ]
         },
@@ -365,40 +735,79 @@
             "key": "field_sobre_tab_stack",
             "label": "Stack",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_sobre_stack_etiqueta",
             "label": "Etiqueta",
             "name": "sobre_stack_etiqueta",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
-            "placeholder": "/ Stack"
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "\/ Stack",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_sobre_stack_titular",
             "label": "Titular",
             "name": "sobre_stack_titular",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Si se deja vacío, se usa el texto del diseño.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 2,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_sobre_stack_lista",
             "label": "Herramientas",
             "name": "sobre_stack_lista",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Un grupo por línea: NOMBRE | herramientas. Ej.: DISEÑO | Figma · FigJam · Prototipado. Si se deja vacío, se usa el texto del diseño.",
             "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "rows": 4,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -407,6 +816,13 @@
                 "param": "page",
                 "operator": "==",
                 "value": "11"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-sobre-mi.php"
             }
         ]
     ],
@@ -419,5 +835,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1792161995
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1793895303
 }
