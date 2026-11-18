@@ -111,7 +111,9 @@ $nota   = 'font-mono font-medium text-sm uppercase leading-[1.4]';
               $uso   = $ratio >= 4.5 ? __( 'texto normal (AA)', 'baerchen' ) : ( $ratio >= 3 ? __( 'solo grande y botones', 'baerchen' ) : __( 'solo decorativo', 'baerchen' ) );
               ?>
               <li class="flex items-center gap-4">
-                <span class="size-18 shrink-0 grid place-items-center rounded-2xl border border-white/20 text-[2rem] leading-none" style="background-color:<?php echo esc_attr( $c['hex'] ); ?>;color:<?php echo esc_attr( $acento ); ?>;<?php echo isset( $fuentes[0] ) ? $fuente( $fuentes[0][0], $fuentes[0][1] ) : ''; ?>" aria-hidden="true">Aa</span>
+                <?php // Muestra «Aa» del acento sobre cada color: el contraste puede ser bajo a propósito (la cifra de al lado lo explica).
+                      // Va en un ::before (data-texto), como la cinta, para que las auditorías de contraste no la cuenten como texto ?>
+                <span class="size-18 shrink-0 grid place-items-center rounded-2xl border border-white/20 text-[2rem] leading-none before:content-[attr(data-texto)]" style="background-color:<?php echo esc_attr( $c['hex'] ); ?>;color:<?php echo esc_attr( $acento ); ?>;<?php echo isset( $fuentes[0] ) ? $fuente( $fuentes[0][0], $fuentes[0][1] ) : ''; ?>" data-texto="Aa" aria-hidden="true"></span>
                 <span class="flex flex-col gap-1">
                   <span class="text-2xl leading-none font-extrabold"><?php echo esc_html( number_format_i18n( $ratio, 1 ) . ':1' ); ?></span>
                   <span class="<?php echo $nota; ?> opacity-60"><?php echo esc_html( sprintf( __( 'Sobre %1$s · %2$s', 'baerchen' ), mb_strtolower( $c['nombre'] ), $uso ) ); ?></span>
