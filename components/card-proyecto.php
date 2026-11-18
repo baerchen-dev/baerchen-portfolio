@@ -4,6 +4,7 @@
  * Usar dentro de un loop de proyectos. Toda la tarjeta es un enlace.
  * Destino: el caso de estudio (/trabajos/{slug}/) si el proyecto ya lo tiene (entradilla del caso rellena);
  * si no, y tiene "URL de la web", abre esa web en una pestaña nueva (icono ↗ junto al nombre).
+ * Sin caso ni web: la tarjeta no es un enlace (sin mano ni zoom), en lugar de llevar a una página casi vacía.
  * Imagen 9:8 (tamaño baerchen-tarjeta) · nombre Bold + frase al 60 % · etiquetas en Geist Mono con borde
  * Logo del proyecto encima de la foto, abajo a la izquierda: assets/img/proyectos/{slug}.svg (si existe)
  * Hover: la foto se acerca un 4 % dentro de su marco; el logo se queda quieto.
@@ -16,8 +17,10 @@ $estado    = function_exists( 'get_field' ) ? get_field( 'proyecto_estado' ) : '
 $etiquetas = get_the_terms( get_the_ID(), 'etiqueta_proyecto' );
 $sizes     = $args['sizes'] ?? '(min-width: 1280px) 592px, (min-width: 768px) 50vw, 100vw';
 $oscuro    = ( $args['tema'] ?? 'claro' ) === 'oscuro';
-$url_web   = baerchen_proyecto_tiene_caso() ? '' : ( function_exists( 'get_field' ) ? get_field( 'proyecto_url' ) : '' );
-$destino   = $url_web ? $url_web : get_permalink();
+$tiene_caso = baerchen_proyecto_tiene_caso();
+$url_web   = $tiene_caso ? '' : ( function_exists( 'get_field' ) ? get_field( 'proyecto_url' ) : '' );
+$destino   = $tiene_caso ? get_permalink() : $url_web;   // vacío: sin caso ni web → tarjeta sin enlace
+$etiqueta_html = $destino ? 'a' : 'div';
 
 // Colores según el fondo (contraste AA comprobado: ink/60 sobre crema 4,7:1 · bg/60 sobre ink 6,7:1)
 $c_nombre    = $oscuro ? 'text-bg' : 'text-ink';
@@ -29,13 +32,17 @@ $c_desarrollo = $oscuro ? 'border-bg bg-bg text-ink' : 'border-ink bg-ink text-b
 $logo_ruta = '/assets/img/proyectos/' . get_post_field( 'post_name' ) . '.svg';
 $logo_url  = file_exists( get_template_directory() . $logo_ruta ) ? get_template_directory_uri() . $logo_ruta : '';
 ?>
+<?php if ( $destino ) : ?>
 <a href="<?php echo esc_url( $destino ); ?>"<?php if ( $url_web ) : ?> target="_blank" rel="noopener"<?php endif; ?> class="group block cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
+<?php else : ?>
+<div class="block">
+<?php endif; ?>
 
   <!-- IMAGEN + LOGO · alt vacíos: el nombre del proyecto ya está en el texto del enlace -->
   <div class="relative overflow-hidden rounded-4xl">
     <?php if ( has_post_thumbnail() ) :
       the_post_thumbnail( 'baerchen-tarjeta', array(
-        'class' => 'w-full aspect-9/8 object-cover transition-transform duration-500 ease-out group-hover:scale-104 motion-reduce:transition-none',
+        'class' => 'w-full aspect-9/8 object-cover transition-transform duration-500 ease-out motion-reduce:transition-none' . ( $destino ? ' group-hover:scale-104' : '' ),
         'sizes' => $sizes,
         'alt'   => '',
       ) );
@@ -67,4 +74,4 @@ $logo_url  = file_exists( get_template_directory() . $logo_ruta ) ? get_template
     <?php endif; ?>
   </div>
 
-</a>
+</<?php echo $etiqueta_html; ?>>
