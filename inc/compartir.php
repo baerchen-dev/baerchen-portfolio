@@ -2,7 +2,8 @@
 /**
  * COMPARTIR · Open Graph (WhatsApp, Telegram, LinkedIn…)
  * Imagen: en los casos de estudio, su imagen destacada recortada a 1200 × 630 (JPG en uploads/baerchen-compartir/, se hace
- * la primera vez que hace falta y al guardar el proyecto); en el resto, assets/img/compartir.jpg (Figma: Recursos · Casos de estudio).
+ * la primera vez que hace falta y al guardar el proyecto); en el resto, assets/img/compartir.jpg, o compartir-en.jpg en inglés
+ * (Figma: Recursos · Casos de estudio, marcos compartir.jpg y compartir-en.jpg).
  * Descripción: la misma que ve Google (baerchen_descripcion(), en functions.php).
  */
 
@@ -51,13 +52,16 @@ add_action( 'acf/save_post', 'baerchen_proyecto_guardar_compartir', 20 );
 function baerchen_compartir_etiquetas() {
   $marca  = get_bloginfo( 'name' );
   $titulo = $marca . ' · ' . __( 'Diseño UX y desarrollo web', 'baerchen' );
+  // Imagen general en el idioma de la página: assets/img/compartir-en.jpg en inglés; si no existe la del idioma, compartir.jpg
+  $idioma  = function_exists( 'pll_current_language' ) ? pll_current_language() : '';
+  $archivo = ( $idioma && file_exists( get_template_directory() . "/assets/img/compartir-{$idioma}.jpg" ) ) ? "compartir-{$idioma}.jpg" : 'compartir.jpg';
   $imagen = array(
-    'url'   => get_template_directory_uri() . '/assets/img/compartir.jpg',
+    'url'   => get_template_directory_uri() . '/assets/img/' . $archivo,
     'ancho' => BAERCHEN_COMPARTIR_ANCHO,
     'alto'  => BAERCHEN_COMPARTIR_ALTO,
   );
   $tipo   = 'website';
-  $url    = home_url( '/' );
+  $url    = function_exists( 'pll_home_url' ) ? pll_home_url() : home_url( '/' );   // portada del idioma: /en/ en inglés
 
   if ( is_singular( 'proyecto' ) ) {
     $titulo = get_the_title() . ' · ' . __( 'Caso de estudio', 'baerchen' );
@@ -71,7 +75,7 @@ function baerchen_compartir_etiquetas() {
 
   $etiquetas = array(
     'og:site_name'    => $marca,
-    'og:locale'       => 'es_ES',
+    'og:locale'       => get_locale(),   // es_ES o en_GB (Polylang cambia el idioma según la página)
     'og:type'         => $tipo,
     'og:title'        => $titulo,
     'og:description'  => baerchen_descripcion(),
