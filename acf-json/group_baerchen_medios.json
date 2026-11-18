@@ -1,0 +1,46 @@
+{
+    "key": "group_baerchen_medios",
+    "title": "Medios · Inglés",
+    "fields": [
+        {
+            "key": "field_alt_en",
+            "label": "Texto alternativo (inglés)",
+            "name": "alt_en",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Lo que lee el lector de pantalla en las páginas en inglés. Si se deja vacío, se usa el texto alternativo en español.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "attachment",
+                "operator": "==",
+                "value": "image"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Traducción del texto alternativo de cada imagen (functions.php → baerchen_alt_traducido).",
+    "show_in_rest": 0,
+    "modified": 1795009775
+}

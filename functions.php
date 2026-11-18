@@ -222,6 +222,25 @@ function baerchen_acf_portada_traducida( $coincide, $regla, $pantalla ) {
 }
 add_filter( 'acf/location/rule_match/page_type', 'baerchen_acf_portada_traducida', 10, 3 );
 
+/* TEXTO ALTERNATIVO TRADUCIDO
+ * Medios no se traduce con Polylang (duplicaría cada imagen). En su lugar, cada imagen tiene el campo
+ * "Texto alternativo (inglés)" (acf-json/group_baerchen_medios.json, meta alt_en): en las páginas en otro idioma,
+ * cuando alguien pide el texto alternativo (get_post_meta o wp_get_attachment_image), se da el de ese idioma.
+ * Si está vacío, el español. En el panel no cambia nada.
+ */
+function baerchen_alt_traducido( $valor, $id, $clave, $unico ) {
+  if ( '_wp_attachment_image_alt' !== $clave || is_admin() || ! function_exists( 'pll_current_language' ) ) {
+    return $valor;
+  }
+  $idioma = pll_current_language();
+  if ( ! $idioma || pll_default_language() === $idioma ) {
+    return $valor;
+  }
+  $alt = get_post_meta( $id, 'alt_' . $idioma, true );
+  return $alt ? ( $unico ? $alt : array( $alt ) ) : $valor;
+}
+add_filter( 'get_post_metadata', 'baerchen_alt_traducido', 10, 4 );
+
 /* FAVICON (osito, assets/img/)
  * favicon.svg cambia de color solo: ink en modo claro, crema en modo oscuro (media query dentro del SVG).
  * apple-touch-icon.png: 180 × 180, fondo crema opaco (iOS no admite transparencia ni SVG).
