@@ -241,6 +241,32 @@ function baerchen_alt_traducido( $valor, $id, $clave, $unico ) {
 }
 add_filter( 'get_post_metadata', 'baerchen_alt_traducido', 10, 4 );
 
+/* SEO · MAPA DEL SITIO SIN USUARIOS
+ * WordPress añade a /wp-sitemap.xml un mapa de autores que muestra el nombre de usuario de acceso (francesc).
+ * No aporta nada a Google y ayuda a quien intenta entrar al panel: fuera.
+ */
+add_filter( 'wp_sitemaps_add_provider', function ( $proveedor, $nombre ) {
+  return 'users' === $nombre ? false : $proveedor;
+}, 10, 2 );
+
+/* SEO · HREFLANG X-DEFAULT
+ * Polylang pone <link rel="alternate" hreflang="es"> y "en" en cada página traducida, pero no "x-default" (la versión
+ * para quien no habla ninguno de los dos idiomas) cuando el español va sin /es/. Se añade apuntando al idioma por defecto.
+ */
+function baerchen_hreflang_x_default( $hreflangs ) {
+  if ( isset( $hreflangs['x-default'] ) || ! function_exists( 'pll_default_language' ) ) {
+    return $hreflangs;
+  }
+  $locale = str_replace( '_', '-', (string) pll_default_language( 'locale' ) );   // es-ES
+  $codigo = strtok( $locale, '-' );                                                 // es
+  $url    = $hreflangs[ $codigo ] ?? ( $hreflangs[ $locale ] ?? '' );
+  if ( $url ) {
+    $hreflangs['x-default'] = $url;
+  }
+  return $hreflangs;
+}
+add_filter( 'pll_rel_hreflang_attributes', 'baerchen_hreflang_x_default' );
+
 /* FAVICON (osito, assets/img/)
  * favicon.svg cambia de color solo: ink en modo claro, crema en modo oscuro (media query dentro del SVG).
  * apple-touch-icon.png: 180 × 180, fondo crema opaco (iOS no admite transparencia ni SVG).
